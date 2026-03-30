@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 const quickSpecs = [
   { value: `${PROPERTY.bedrooms} BR`, label: "Bedrooms" },
   { value: `${PROPERTY.bathrooms} BA`, label: "Bathrooms" },
-  { value: `~${PROPERTY.sqft} sq ft`, label: "Living Space" },
   { value: `Sleeps ${PROPERTY.maxGuests}`, label: "Guests" },
   { value: `${PROPERTY.acres} Acres`, label: "Land" },
   { value: `Est. ${PROPERTY.yearBuilt}`, label: "Year Built" },
+  { value: "2026", label: "Renovated" },
 ];
 
 const roomTour = [
