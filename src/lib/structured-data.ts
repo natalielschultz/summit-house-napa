@@ -1,4 +1,4 @@
-export function getLodgingBusinessSchema() {
+export function getLodgingBusinessSchema(reviewStats?: { rating: string; count: number }) {
   return {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
@@ -30,14 +30,14 @@ export function getLodgingBusinessSchema() {
     ],
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "4.88",
+      ratingValue: reviewStats?.rating ?? "4.88",
       bestRating: "5",
-      reviewCount: "16",
+      reviewCount: String(reviewStats?.count ?? 16),
     },
   };
 }
 
-export function getVacationRentalSchema() {
+export function getVacationRentalSchema(reviewStats?: { rating: string; count: number }) {
   return {
     "@context": "https://schema.org",
     "@type": "VacationRental",
@@ -62,9 +62,9 @@ export function getVacationRentalSchema() {
     ],
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "4.88",
+      ratingValue: reviewStats?.rating ?? "4.88",
       bestRating: "5",
-      reviewCount: "16",
+      reviewCount: String(reviewStats?.count ?? 16),
     },
   };
 }

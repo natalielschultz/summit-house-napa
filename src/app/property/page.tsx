@@ -6,6 +6,7 @@ import CTABanner from "@/components/sections/CTABanner";
 import Image from "next/image";
 import { AMENITIES, PROPERTY } from "@/lib/constants";
 import { getVacationRentalSchema, getBreadcrumbSchema } from "@/lib/structured-data";
+import PropertyNavChips from "@/components/ui/PropertyNavChips";
 
 export const metadata: Metadata = {
   title: "The Property — Restored 1969 A-Frame Cabin | A-Frame of Napa",
@@ -38,6 +39,7 @@ const quickSpecs = [
 
 const roomTour = [
   {
+    id: "great-room",
     title: "Great Room & Conversation Pit",
     description:
       "The heart of the A-Frame is a soaring double-height great room crowned by the iconic triangular roofline. Floor-to-ceiling windows fill the space with filtered light from the surrounding redwoods. At its center, a sunken conversation pit — restored with custom cushions and anchored by a stone fireplace — invites the kind of slow, lingering evenings that define life on the mountain. The Sonos sound system fills the room with warmth, whether it is morning jazz or evening silence you are after.",
@@ -46,6 +48,7 @@ const roomTour = [
     direction: "left" as const,
   },
   {
+    id: "bedrooms",
     title: "Primary Bedroom",
     description:
       "The primary suite occupies the upper loft of the A-frame, where the roofline meets at its peak. Wake to dappled light through the redwoods and the quiet of two acres of private land. The room features a king bed with luxury linens, designer lighting, and an en-suite bathroom with modern finishes. It is the kind of room where you lose track of which day it is — and that is the point.",
@@ -54,6 +57,7 @@ const roomTour = [
     direction: "right" as const,
   },
   {
+    id: undefined,
     title: "Guest Bedrooms",
     description:
       "Two additional bedrooms on the main level provide comfortable retreats for guests or family. Each is thoughtfully appointed with quality mattresses, soft linens, and the quiet insulation that comes from being surrounded by forest. Whether welcoming friends for part of your stay or settling in for a multi-month creative retreat, every guest sleeps well on Mount Veeder.",
@@ -62,6 +66,7 @@ const roomTour = [
     direction: "left" as const,
   },
   {
+    id: "kitchen",
     title: "Kitchen",
     description:
       "Fully equipped for the kind of cooking that a month-long stay demands — not just reheating, but real meals. Modern appliances, ample counter space, quality cookware, and a layout that makes the kitchen feel like part of the living experience rather than a utility room. Open a bottle of Mount Veeder wine, put something on the stove, and let the evening unfold.",
@@ -70,6 +75,7 @@ const roomTour = [
     direction: "right" as const,
   },
   {
+    id: "outdoor",
     title: "Outdoor Spaces",
     description:
       "The property extends far beyond the cabin walls. A wraparound front deck offers panoramic views of Napa Valley — the kind of vista that changes with every hour and every season. The zen garden, with its handmade mosaic dining table, is a place for morning coffee or afternoon reading. Two fire pit lounges anchor the evenings. And everywhere, the redwoods stand watch, ancient and still.",
@@ -115,6 +121,9 @@ export default function PropertyPage() {
         subtitle="A fully restored 1969 A-frame cabin, reimagined for the modern long-stay guest."
       />
 
+      {/* Nav Chips */}
+      <PropertyNavChips />
+
       {/* 2. Quick Specs */}
       <section className="bg-ink py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-6 md:px-12">
@@ -148,6 +157,7 @@ export default function PropertyPage() {
               return (
                 <div
                   key={room.title}
+                  id={room.id}
                   className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center ${
                     !imageOnLeft ? "md:[direction:rtl]" : ""
                   }`}
@@ -179,7 +189,7 @@ export default function PropertyPage() {
       </section>
 
       {/* 4. Amenities Grid */}
-      <section className="bg-parchment py-24 md:py-32">
+      <section id="amenities" className="bg-parchment py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 md:px-12">
           <FadeIn>
             <SectionHeading
@@ -210,8 +220,8 @@ export default function PropertyPage() {
         </div>
       </section>
 
-      {/* 5. Photo Gallery Placeholder */}
-      <section className="bg-white py-24 md:py-32">
+      {/* 5. Photo Gallery */}
+      <section id="gallery" className="bg-white py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 md:px-12">
           <FadeIn>
             <SectionHeading title="Gallery" />

@@ -5,26 +5,30 @@ import FadeIn from "@/components/animation/FadeIn";
 import CTABanner from "@/components/sections/CTABanner";
 import { REVIEWS } from "@/lib/constants";
 import { getBreadcrumbSchema } from "@/lib/structured-data";
+import { getReviews, getReviewStats } from "@/lib/reviews";
 
-export const metadata: Metadata = {
-  title: "Guest Reviews — 4.88 Rating | A-Frame of Napa",
-  description:
-    "Read verified guest reviews of the A-Frame of Napa. Rated 4.88 out of 5 from 16 Airbnb reviews. See what guests say about this luxury Mount Veeder retreat.",
-  alternates: { canonical: "/reviews" },
-  openGraph: {
-    title: "Guest Reviews — 4.88 Rating | A-Frame of Napa",
-    description:
-      "Rated 4.88 out of 5 from 16 verified Airbnb reviews. See what guests say about this luxury Mount Veeder retreat.",
-    images: [{ url: "/images/hanging-chair-sunlit.jpg", width: 1200, height: 630 }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Guest Reviews — 4.88 Rating | A-Frame of Napa",
-    description:
-      "Rated 4.88 out of 5 from 16 verified Airbnb reviews.",
-    images: ["/images/hanging-chair-sunlit.jpg"],
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const stats = await getReviewStats();
+  const title = `Guest Reviews — ${stats.rating} Rating | A-Frame of Napa`;
+  const description = `Read verified guest reviews of the A-Frame of Napa. Rated ${stats.rating} out of 5 from ${stats.count} Airbnb reviews. See what guests say about this luxury Mount Veeder retreat.`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: "/reviews" },
+    openGraph: {
+      title,
+      description: `Rated ${stats.rating} out of 5 from ${stats.count} verified Airbnb reviews. See what guests say about this luxury Mount Veeder retreat.`,
+      images: [{ url: "/images/hanging-chair-sunlit.jpg", width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: `Rated ${stats.rating} out of 5 from ${stats.count} verified Airbnb reviews.`,
+      images: ["/images/hanging-chair-sunlit.jpg"],
+    },
+  };
+}
 
 function StarRating({ rating }: { rating: number }) {
   return (
@@ -36,8 +40,10 @@ function StarRating({ rating }: { rating: number }) {
   );
 }
 
-export default function ReviewsPage() {
-  const [featured, ...remaining] = REVIEWS;
+export default async function ReviewsPage() {
+  const [reviews, stats] = await Promise.all([getReviews(), getReviewStats()]);
+  const allReviews = reviews.length > 0 ? reviews : [...REVIEWS];
+  const [featured, ...remaining] = allReviews;
 
   return (
     <>
@@ -48,7 +54,7 @@ export default function ReviewsPage() {
       <Hero
         image="/images/hanging-chair-sunlit.jpg"
         title="What Guests Say"
-        subtitle="4.88 out of 5 — 16 reviews on Airbnb."
+        subtitle={`${stats.rating} out of 5 — ${stats.count} reviews on Airbnb.`}
       />
 
       {/* Featured Review */}
@@ -87,7 +93,7 @@ export default function ReviewsPage() {
           </FadeIn>
           <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
             {remaining.map((review, i) => (
-              <FadeIn key={review.name} delay={i * 0.1}>
+              <FadeIn key={i} delay={i * 0.1}>
                 <div className="border border-charcoal/10 p-8 md:p-10 flex flex-col gap-5 h-full">
                   <span className="font-serif text-6xl text-brass/15 leading-none select-none -mb-4">
                     &ldquo;
@@ -122,7 +128,7 @@ export default function ReviewsPage() {
                 Verified Reviews
               </p>
               <p className="font-serif text-xl md:text-2xl text-ink">
-                Read all 16 reviews on Airbnb
+                Read all {stats.count} reviews on Airbnb
               </p>
               <p className="font-sans text-sm text-text-muted">
                 Link coming soon — all reviews shown above are from verified Airbnb guests.
