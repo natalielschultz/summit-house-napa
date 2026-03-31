@@ -5,7 +5,7 @@ import FadeIn from "@/components/animation/FadeIn";
 import AvailabilityContent from "@/components/sections/AvailabilityContent";
 import FAQ from "@/components/sections/FAQ";
 import { PRICING } from "@/lib/constants";
-import { getDayAvailability } from "@/lib/availability";
+import { getDayAvailability, computeSeasonalRates, formatRateRange } from "@/lib/availability";
 import { getFAQSchema, getBreadcrumbSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
@@ -57,6 +57,18 @@ function getCurrentSeasonName(): string {
 export default async function AvailabilityPage() {
   const currentSeason = getCurrentSeasonName();
   const days = await getDayAvailability();
+  const liveRates = computeSeasonalRates(days);
+
+  // Override hardcoded ranges with live API data when available
+  const seasons = PRICING.seasons.map((season) => {
+    if (season.name === "Peak Season" && liveRates.peak) {
+      return { ...season, range: formatRateRange(liveRates.peak) };
+    }
+    if (season.name === "Off-Peak" && liveRates.offPeak) {
+      return { ...season, range: formatRateRange(liveRates.offPeak) };
+    }
+    return season;
+  });
 
   return (
     <>
@@ -84,7 +96,7 @@ export default async function AvailabilityPage() {
             />
           </FadeIn>
           <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
-            {PRICING.seasons.map((season, i) => {
+            {seasons.map((season, i) => {
               const isCurrent = season.name === currentSeason;
               return (
                 <FadeIn key={season.name} delay={i * 0.1}>

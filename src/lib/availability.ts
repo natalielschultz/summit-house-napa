@@ -117,6 +117,60 @@ function expandToDays(months: MonthAvailability[]): DayAvailability[] {
 // Public API — tries Hospitable first, falls back to mock data
 // ---------------------------------------------------------------------------
 
+// Peak = Apr–Nov (months 3–10), Off-Peak = Dec–Mar (months 0–2, 11)
+function isPeakMonth(month: number): boolean {
+  return month >= 3 && month <= 10;
+}
+
+export interface SeasonalRates {
+  peak: { min: number; max: number } | null;
+  offPeak: { min: number; max: number } | null;
+}
+
+export function computeSeasonalRates(days: DayAvailability[]): SeasonalRates {
+  // Group available daily rates by month, then compute monthly totals
+  const monthlyTotals = new Map<string, { total: number; count: number; month: number }>();
+
+  for (const d of days) {
+    if (d.status !== "available" || !d.dailyRate) continue;
+    const key = d.date.substring(0, 7); // YYYY-MM
+    const month = parseInt(d.date.substring(5, 7)) - 1;
+    const entry = monthlyTotals.get(key) ?? { total: 0, count: 0, month };
+    entry.total += d.dailyRate;
+    entry.count += 1;
+    monthlyTotals.set(key, entry);
+  }
+
+  let peakMin = Infinity, peakMax = -Infinity;
+  let offMin = Infinity, offMax = -Infinity;
+
+  for (const { total, count, month } of monthlyTotals.values()) {
+    // Only count full or near-full months (25+ days) for accurate ranges
+    if (count < 25) continue;
+    // Estimate 30-day rate from actual daily totals
+    const monthlyRate = Math.round((total / count) * 30);
+
+    if (isPeakMonth(month)) {
+      peakMin = Math.min(peakMin, monthlyRate);
+      peakMax = Math.max(peakMax, monthlyRate);
+    } else {
+      offMin = Math.min(offMin, monthlyRate);
+      offMax = Math.max(offMax, monthlyRate);
+    }
+  }
+
+  return {
+    peak: peakMin <= peakMax ? { min: peakMin, max: peakMax } : null,
+    offPeak: offMin <= offMax ? { min: offMin, max: offMax } : null,
+  };
+}
+
+export function formatRateRange(range: { min: number; max: number }): string {
+  const fmt = (n: number) => `$${Math.round(n / 1000).toLocaleString()},000`;
+  if (range.min === range.max) return fmt(range.min);
+  return `${fmt(range.min)}–${fmt(range.max)}`;
+}
+
 export async function getDayAvailability(): Promise<DayAvailability[]> {
   // Try Hospitable API
   const key = process.env.HOSPITABLE_API_KEY;
