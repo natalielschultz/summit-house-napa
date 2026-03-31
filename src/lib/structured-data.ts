@@ -5,7 +5,7 @@ export function getLodgingBusinessSchema() {
     name: "A-Frame of Napa",
     description:
       "Restored 1969 A-frame luxury cabin rental on Mount Veeder. 3BR/2.5BA, sleeps 11, 2 acres, hot tub, sauna.",
-    url: "https://aframeofnapa.com",
+    url: "https://www.aframeofnapa.com",
     email: "stay@aframeofnapa.com",
     address: {
       "@type": "PostalAddress",
@@ -44,7 +44,7 @@ export function getVacationRentalSchema() {
     name: "A-Frame of Napa Luxury Cabin",
     description:
       "Restored 1969 A-frame with hot tub, sauna, meditation trail. Sleeps 11 on 2 acres. Full-month luxury rentals in Napa Valley.",
-    url: "https://aframeofnapa.com/property",
+    url: "https://www.aframeofnapa.com/property",
     numberOfBedrooms: 3,
     numberOfBathroomsTotal: 2.5,
     occupancy: {
@@ -191,13 +191,13 @@ export function getBreadcrumbSchema(pageName: string, pageUrl: string) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://aframeofnapa.com",
+        item: "https://www.aframeofnapa.com",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: pageName,
-        item: `https://aframeofnapa.com${pageUrl}`,
+        item: `https://www.aframeofnapa.com${pageUrl}`,
       },
     ],
   };

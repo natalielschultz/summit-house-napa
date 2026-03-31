@@ -5,7 +5,7 @@ export const SITE = {
   email: "stay@aframeofnapa.com",
   phone: "",
   instagram: "aframeofnapa",
-  url: "https://aframeofnapa.com",
+  url: "https://www.aframeofnapa.com",
 } as const;
 
 export const NAV_LINKS = [

@@ -31,16 +31,16 @@ A-Frame of Napa is a restored 1969 A-frame cabin available for monthly rentals o
 Rated 4.88 out of 5 from 16 verified Airbnb reviews.
 
 ## Pages
-- [Property Details](https://aframeofnapa.com/property)
-- [The Experience](https://aframeofnapa.com/experience)
-- [Location & Access](https://aframeofnapa.com/location)
-- [Availability & Rates](https://aframeofnapa.com/availability)
-- [Guest Reviews](https://aframeofnapa.com/reviews)
-- [Our Story](https://aframeofnapa.com/about)
+- [Property Details](https://www.aframeofnapa.com/property)
+- [The Experience](https://www.aframeofnapa.com/experience)
+- [Location & Access](https://www.aframeofnapa.com/location)
+- [Availability & Rates](https://www.aframeofnapa.com/availability)
+- [Guest Reviews](https://www.aframeofnapa.com/reviews)
+- [Our Story](https://www.aframeofnapa.com/about)
 
 ## Booking
-Website: https://aframeofnapa.com
-Availability: https://aframeofnapa.com/availability
+Website: https://www.aframeofnapa.com
+Availability: https://www.aframeofnapa.com/availability
 Email: stay@aframeofnapa.com
 
 ## Key Policies

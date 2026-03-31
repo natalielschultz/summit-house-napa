@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: "A-Frame of Napa — Luxury Monthly Retreat on Mount Veeder",
   description:
     "Private mountaintop sanctuary among ancient redwoods at Mount Veeder, Napa Valley. Restored 1969 A-frame with hot tub, sauna, and panoramic views.",
-  metadataBase: new URL("https://aframeofnapa.com"),
+  metadataBase: new URL("https://www.aframeofnapa.com"),
   alternates: {
     canonical: "/",
   },

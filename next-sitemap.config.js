@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 const config = {
-  siteUrl: 'https://aframeofnapa.com',
+  siteUrl: 'https://www.aframeofnapa.com',
   generateRobotsTxt: false,
   changefreq: 'weekly',
   priority: 0.7,
