@@ -51,6 +51,9 @@ export default function RootLayout({
       lang="en"
       className={`${cormorant.variable} ${dmSans.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="alternate" href="/llms.txt" type="text/plain" />
+      </head>
       <body className="min-h-full flex flex-col">
         <Navbar />
         <main className="flex-1 pt-[72px]">{children}</main>
