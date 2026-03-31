@@ -8,7 +8,7 @@ import CountUp from "@/components/animation/CountUp";
 import CTABanner from "@/components/sections/CTABanner";
 import Image from "next/image";
 import Link from "next/link";
-import { REVIEWS, PRICING, PROPERTY } from "@/lib/constants";
+import { REVIEWS, PROPERTY } from "@/lib/constants";
 import { getLodgingBusinessSchema } from "@/lib/structured-data";
 
 const pillars = [
@@ -50,11 +50,6 @@ const signatureMoments = [
 
 export default function Home() {
   const featuredReview = REVIEWS[0];
-
-  // Determine current season based on month
-  const month = new Date().getMonth();
-  const seasonIndex = month >= 3 && month <= 10 ? 0 : 1; // April–Nov = Peak, Dec–March = Off-Peak
-  const currentSeason = PRICING.seasons[seasonIndex];
 
   return (
     <>
@@ -231,29 +226,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. Seasonal Availability Teaser */}
+      {/* 7. Availability Teaser */}
       <section className="bg-white py-24 md:py-32">
         <div className="mx-auto max-w-4xl px-6 md:px-12 text-center">
           <FadeIn>
             <div className="flex flex-col items-center gap-8">
-              <span className="font-sans text-xs uppercase tracking-[0.2em] text-sage">
-                Now Booking
-              </span>
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-ink leading-tight">
-                {currentSeason.name}
+                Monthly stays from $8,000
               </h2>
               <p className="font-sans text-base md:text-lg text-text-muted leading-relaxed max-w-xl">
-                {currentSeason.description}
+                Extended stays on Mount Veeder, priced by season. Utilities, WiFi, and all amenities included.
               </p>
-              <div className="flex flex-col items-center gap-2">
-                <span className="font-sans text-xs uppercase tracking-[0.2em] text-text-muted">
-                  {currentSeason.months}
-                </span>
-                <span className="font-serif text-2xl md:text-3xl text-ink">
-                  {currentSeason.range}
-                  <span className="font-sans text-sm text-text-muted"> /month</span>
-                </span>
-              </div>
               <Button variant="primary" href="/availability">
                 Inquire Now
               </Button>
