@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/ui/Button";
 
@@ -44,9 +44,22 @@ const inputClasses =
 const labelClasses =
   "font-sans text-xs uppercase tracking-[0.15em] text-charcoal mb-2 block";
 
-export default function InquiryForm() {
-  const [formData, setFormData] = useState<FormData>(initialFormData);
+interface InquiryFormProps {
+  selectedMonth?: string;
+}
+
+export default function InquiryForm({ selectedMonth }: InquiryFormProps) {
+  const [formData, setFormData] = useState<FormData>({
+    ...initialFormData,
+    months: selectedMonth || "",
+  });
   const [errors, setErrors] = useState<FormErrors>({});
+
+  useEffect(() => {
+    if (selectedMonth) {
+      setFormData((prev) => ({ ...prev, months: selectedMonth }));
+    }
+  }, [selectedMonth]);
   const [submitted, setSubmitted] = useState(false);
 
   function validate(): FormErrors {

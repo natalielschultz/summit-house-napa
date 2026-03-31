@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import FadeIn from "@/components/animation/FadeIn";
-import InquiryForm from "@/components/sections/InquiryForm";
+import AvailabilityContent from "@/components/sections/AvailabilityContent";
 import FAQ from "@/components/sections/FAQ";
 import { PRICING } from "@/lib/constants";
+import { getAvailability } from "@/lib/availability";
 import { getFAQSchema, getBreadcrumbSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
@@ -27,21 +28,6 @@ export const metadata: Metadata = {
   },
 };
 
-const calendarMonths = [
-  { month: "April 2026", status: "Available" },
-  { month: "May 2026", status: "Booked" },
-  { month: "June 2026", status: "Inquire" },
-  { month: "July 2026", status: "Available" },
-  { month: "August 2026", status: "Booked" },
-  { month: "September 2026", status: "Booked" },
-  { month: "October 2026", status: "Inquire" },
-  { month: "November 2026", status: "Available" },
-  { month: "December 2026", status: "Available" },
-  { month: "January 2027", status: "Available" },
-  { month: "February 2027", status: "Inquire" },
-  { month: "March 2027", status: "Available" },
-];
-
 const steps = [
   {
     number: "01",
@@ -63,14 +49,14 @@ const steps = [
   },
 ];
 
-// Determine current season based on month (March 2026 context)
 function getCurrentSeasonName(): string {
   const month = new Date().getMonth();
   return month >= 3 && month <= 10 ? "Peak Season" : "Off-Peak";
 }
 
-export default function AvailabilityPage() {
+export default async function AvailabilityPage() {
   const currentSeason = getCurrentSeasonName();
+  const availability = await getAvailability();
 
   return (
     <>
@@ -170,60 +156,8 @@ export default function AvailabilityPage() {
         </div>
       </section>
 
-      {/* Availability Calendar Placeholder */}
-      <section className="bg-surface py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-6 md:px-12">
-          <FadeIn>
-            <SectionHeading
-              title="Availability"
-              subtitle="A rolling 12-month view. Inquire for exact dates and holds."
-            />
-          </FadeIn>
-          <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {calendarMonths.map((item) => {
-              const statusStyles = {
-                Available: "border-brass/40 bg-white",
-                Booked: "border-charcoal/10 bg-parchment/50",
-                Inquire: "border-charcoal/20 bg-white",
-              };
-              const badgeStyles = {
-                Available:
-                  "bg-brass/10 text-brass",
-                Booked:
-                  "bg-charcoal/5 text-text-muted",
-                Inquire:
-                  "bg-surface text-charcoal",
-              };
-              return (
-                <FadeIn key={item.month}>
-                  <div
-                    className={`border p-5 flex flex-col items-center gap-3 text-center ${
-                      statusStyles[item.status as keyof typeof statusStyles]
-                    }`}
-                  >
-                    <span className="font-sans text-sm text-ink font-medium">
-                      {item.month}
-                    </span>
-                    <span
-                      className={`font-sans text-[10px] uppercase tracking-[0.15em] px-3 py-1 ${
-                        badgeStyles[item.status as keyof typeof badgeStyles]
-                      }`}
-                    >
-                      {item.status}
-                    </span>
-                  </div>
-                </FadeIn>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Inquiry Form */}
-      <div id="inquiry">
-        <SectionHeading title="Inquire About Your Stay" />
-        <InquiryForm />
-      </div>
+      {/* Calendar + Inquiry Form (client interactive) */}
+      <AvailabilityContent months={availability} />
 
       {/* How It Works */}
       <section className="bg-white py-20 md:py-28">
