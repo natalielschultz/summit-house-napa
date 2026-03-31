@@ -25,7 +25,7 @@ export default function AvailabilityContent({ days }: Props) {
     <>
       <AvailabilityCalendar days={days} onDatesSelect={handleDatesSelect} />
 
-      <div id="inquiry">
+      <div id="inquiry" className="pt-20 md:pt-28">
         <SectionHeading title="Inquire About Your Stay" />
         <InquiryForm selectedMonth={selectedDates} />
       </div>
