@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { NAV_LINKS, SITE } from "@/lib/constants";
+import Logo from "@/components/ui/Logo";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,8 +12,8 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-3">
           {/* Logo & tagline */}
           <div>
-            <Link href="/" className="font-serif text-lg tracking-wide text-parchment">
-              A-FRAME OF NAPA
+            <Link href="/" className="inline-block">
+              <Logo className="h-8 w-auto text-parchment" />
             </Link>
             <p className="mt-3 text-sm text-text-muted">
               Mount Veeder &middot; Napa Valley &middot; California

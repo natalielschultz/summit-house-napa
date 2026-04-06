@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { NAV_LINKS, SITE } from "@/lib/constants";
+import Logo from "@/components/ui/Logo";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -41,9 +42,7 @@ export default function Navbar() {
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
-            <span className="font-serif text-lg tracking-wide text-ink">
-              A-FRAME OF NAPA
-            </span>
+            <Logo className="h-8 w-auto md:h-10 text-ink" />
           </Link>
 
           {/* Desktop nav links */}
