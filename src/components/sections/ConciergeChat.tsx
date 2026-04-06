@@ -7,6 +7,17 @@ interface Message {
   content: string;
 }
 
+function stripMarkdown(text: string): string {
+  return text
+    .replace(/\*\*(.+?)\*\*/g, "$1")
+    .replace(/\*(.+?)\*/g, "$1")
+    .replace(/__(.+?)__/g, "$1")
+    .replace(/_(.+?)_/g, "$1")
+    .replace(/^#{1,6}\s+/gm, "")
+    .replace(/^[-*+]\s+/gm, "- ")
+    .replace(/`(.+?)`/g, "$1");
+}
+
 export default function ConciergeChat() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -44,7 +55,6 @@ export default function ConciergeChat() {
 
       const decoder = new TextDecoder();
       let assistantText = "";
-      setMessages([...updated, { role: "assistant", content: "" }]);
 
       while (true) {
         const { done, value } = await reader.read();
@@ -60,17 +70,14 @@ export default function ConciergeChat() {
             try {
               const parsed = JSON.parse(data);
               assistantText += parsed.text;
-              setMessages((prev) => {
-                const next = [...prev];
-                next[next.length - 1] = { role: "assistant", content: assistantText };
-                return next;
-              });
             } catch {
               // skip malformed chunks
             }
           }
         }
       }
+
+      setMessages([...updated, { role: "assistant", content: stripMarkdown(assistantText) }]);
     } catch {
       setMessages((prev) => [
         ...prev,
@@ -138,10 +145,17 @@ export default function ConciergeChat() {
                       : "bg-surface text-text rounded-bl-md"
                   }`}
                 >
-                  {msg.content || (loading && i === messages.length - 1 ? "..." : "")}
+                  {msg.content}
                 </div>
               </div>
             ))}
+            {loading && (
+              <div className="flex justify-start">
+                <div className="max-w-[80%] rounded-2xl rounded-bl-md bg-surface px-4 py-2.5 font-sans text-sm text-text-muted italic">
+                  Thinking...
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Input */}
