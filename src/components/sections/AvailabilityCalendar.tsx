@@ -240,7 +240,7 @@ export default function AvailabilityCalendar({ days, onDatesSelect }: Props) {
 
     return (
       <div className="flex-1 min-w-0">
-        <h3 className="font-serif text-lg md:text-xl text-ink text-center mb-6 tracking-wide">
+        <h3 className="font-serif font-light uppercase tracking-[2px] text-xl md:text-2xl text-ink text-center mb-6">
           {label}
         </h3>
         <div className="grid grid-cols-7 mb-3">
@@ -284,7 +284,7 @@ export default function AvailabilityCalendar({ days, onDatesSelect }: Props) {
             <p className="font-sans text-[10px] uppercase tracking-[0.25em] text-text-muted">
               Select Your Dates
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-ink leading-tight">
+            <h2 className="font-serif font-extralight uppercase tracking-[4px] text-[32px] md:text-5xl text-ink leading-tight">
               Availability
             </h2>
             <div

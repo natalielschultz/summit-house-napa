@@ -51,7 +51,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm tracking-wide text-charcoal transition-colors duration-200 hover:text-ink"
+                className="font-serif text-xs uppercase tracking-[1.8px] text-charcoal transition-colors duration-200 hover:text-ink"
               >
                 {link.label}
               </Link>
@@ -62,7 +62,7 @@ export default function Navbar() {
           <div className="hidden lg:flex">
             <Link
               href="/availability"
-              className="bg-brass px-5 py-2.5 text-xs font-medium uppercase tracking-widest text-ink transition-colors duration-200 hover:bg-brass-light"
+              className="font-serif bg-brass px-5 py-2.5 text-xs uppercase tracking-[2.5px] text-ink transition-colors duration-200 hover:bg-brass-light"
             >
               Inquire Now
             </Link>
@@ -116,7 +116,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="font-serif text-2xl tracking-wide text-ink"
+                    className="font-serif text-2xl uppercase tracking-[1.8px] text-ink"
                   >
                     {link.label}
                   </Link>
@@ -131,7 +131,7 @@ export default function Navbar() {
                 <Link
                   href="/availability"
                   onClick={() => setMobileOpen(false)}
-                  className="mt-4 inline-block bg-brass px-8 py-3 text-xs font-medium uppercase tracking-widest text-ink transition-colors duration-200 hover:bg-brass-light"
+                  className="font-serif mt-4 inline-block bg-brass px-8 py-3 text-xs uppercase tracking-[2.5px] text-ink transition-colors duration-200 hover:bg-brass-light"
                 >
                   Inquire Now
                 </Link>

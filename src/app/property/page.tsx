@@ -172,7 +172,7 @@ export default function PropertyPage() {
                     delay={0.15}
                   >
                     <div className="flex flex-col gap-4 md:[direction:ltr]">
-                      <h3 className="font-serif text-2xl md:text-3xl text-ink">
+                      <h3 className="font-serif font-light uppercase tracking-[2px] text-xl md:text-2xl text-ink">
                         {room.title}
                       </h3>
                       <div className="w-16 h-px bg-brass" aria-hidden="true" />

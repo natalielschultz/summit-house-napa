@@ -68,7 +68,7 @@ export default function Hero({
           >
             <motion.h1
               variants={itemVariants}
-              className="font-serif text-5xl md:text-7xl text-parchment leading-[1.1]"
+              className="font-serif font-thin uppercase tracking-[6px] text-5xl md:text-7xl text-parchment leading-[1.1]"
             >
               {title}
             </motion.h1>

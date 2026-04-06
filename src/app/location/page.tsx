@@ -121,7 +121,7 @@ export default function LocationPage() {
               <FadeIn key={item.destination} delay={i * 0.1}>
                 <div className="border border-charcoal/10 p-8 flex flex-col gap-3 h-full">
                   <div className="flex items-baseline justify-between gap-4">
-                    <h3 className="font-serif text-xl text-ink">
+                    <h3 className="font-serif font-light uppercase tracking-[2px] text-xl text-ink">
                       {item.destination}
                     </h3>
                     <span className="font-sans text-sm text-brass uppercase tracking-wider whitespace-nowrap">
@@ -171,7 +171,7 @@ export default function LocationPage() {
             <FadeIn delay={0.2} className="lg:col-span-8">
               <div className="space-y-8">
                 <div>
-                  <h3 className="font-serif text-xl text-ink mb-3">
+                  <h3 className="font-serif font-light uppercase tracking-[2px] text-xl text-ink mb-3">
                     From San Francisco or Oakland
                   </h3>
                   <p className="font-sans text-base text-text leading-relaxed">
@@ -184,7 +184,7 @@ export default function LocationPage() {
                 </div>
                 <div className="bg-brass h-px w-20" aria-hidden="true" />
                 <div>
-                  <h3 className="font-serif text-xl text-ink mb-3">
+                  <h3 className="font-serif font-light uppercase tracking-[2px] text-xl text-ink mb-3">
                     The Mountain Road
                   </h3>
                   <p className="font-sans text-base text-text leading-relaxed">
@@ -198,7 +198,7 @@ export default function LocationPage() {
                 </div>
                 <div className="bg-brass h-px w-20" aria-hidden="true" />
                 <div>
-                  <h3 className="font-serif text-xl text-ink mb-3">
+                  <h3 className="font-serif font-light uppercase tracking-[2px] text-xl text-ink mb-3">
                     Winter Advisory
                   </h3>
                   <p className="font-sans text-base text-text leading-relaxed">

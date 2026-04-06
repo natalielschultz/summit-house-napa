@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Josefin_Sans, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
-const cormorant = Cormorant_Garamond({
+const josefin = Josefin_Sans({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-cormorant",
+  weight: ["100", "200", "300", "400"],
+  variable: "--font-josefin",
 });
 
 const dmSans = DM_Sans({
@@ -50,7 +50,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${dmSans.variable} h-full antialiased`}
+      className={`${josefin.variable} ${dmSans.variable} h-full antialiased`}
     >
       <head>
         <link rel="alternate" href="/llms.txt" type="text/plain" />

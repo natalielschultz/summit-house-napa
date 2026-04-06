@@ -21,7 +21,7 @@ export default function CTABanner({
     >
       <div className="mx-auto max-w-7xl px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
         <h2
-          className={`font-serif text-2xl md:text-3xl lg:text-4xl ${isDark ? "text-parchment" : "text-ink"} leading-tight`}
+          className={`font-serif font-extralight uppercase tracking-[4px] text-2xl md:text-3xl lg:text-4xl ${isDark ? "text-parchment" : "text-ink"} leading-tight`}
         >
           {headline}
         </h2>

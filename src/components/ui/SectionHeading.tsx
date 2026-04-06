@@ -20,7 +20,7 @@ export default function SectionHeading({
   return (
     <div className={`flex flex-col ${alignment} gap-4`}>
       <h2
-        className={`font-serif text-3xl md:text-4xl lg:text-5xl ${titleColor} leading-tight`}
+        className={`font-serif font-extralight uppercase tracking-[4px] text-[32px] md:text-5xl ${titleColor} leading-tight`}
       >
         {title}
       </h2>

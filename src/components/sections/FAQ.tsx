@@ -57,7 +57,7 @@ export default function FAQ() {
     <section className="bg-white py-20 md:py-28">
       <div className="mx-auto max-w-3xl px-6 md:px-12">
         <div className="flex flex-col items-center gap-4 mb-14 text-center">
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-ink leading-tight">
+          <h2 className="font-serif font-extralight uppercase tracking-[4px] text-[32px] md:text-5xl text-ink leading-tight">
             Frequently Asked Questions
           </h2>
           <div

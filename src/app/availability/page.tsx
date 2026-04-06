@@ -112,7 +112,7 @@ export default async function AvailabilityPage() {
                         Current Season
                       </span>
                     )}
-                    <h3 className="font-serif text-xl md:text-2xl text-ink">
+                    <h3 className="font-serif font-light uppercase tracking-[2px] text-xl md:text-2xl text-ink">
                       {season.name}
                     </h3>
                     <p className="font-sans text-xs uppercase tracking-[0.15em] text-text-muted">
@@ -187,7 +187,7 @@ export default async function AvailabilityPage() {
                   <span className="font-serif text-5xl text-brass/20">
                     {step.number}
                   </span>
-                  <h3 className="font-serif text-xl text-ink">{step.title}</h3>
+                  <h3 className="font-serif font-light uppercase tracking-[2px] text-xl text-ink">{step.title}</h3>
                   <p className="font-sans text-sm text-text-muted leading-relaxed">
                     {step.description}
                   </p>

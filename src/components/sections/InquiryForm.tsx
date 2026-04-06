@@ -147,7 +147,7 @@ export default function InquiryForm({ selectedMonth }: InquiryFormProps) {
               }}
               className="text-center py-16"
             >
-              <h3 className="font-serif text-3xl md:text-4xl text-ink mb-4">
+              <h3 className="font-serif font-light uppercase tracking-[2px] text-xl md:text-2xl text-ink mb-4">
                 Thank you.
               </h3>
               <p className="font-sans text-base text-text-muted">

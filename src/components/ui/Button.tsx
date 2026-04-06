@@ -18,7 +18,7 @@ export default function Button({
   onClick,
 }: ButtonProps) {
   const base =
-    "inline-block font-sans text-xs uppercase tracking-[0.15em] px-10 py-4 rounded-none transition-colors duration-400 cursor-pointer";
+    "inline-block font-serif text-xs uppercase tracking-[2.5px] px-10 py-4 rounded-none transition-colors duration-400 cursor-pointer";
 
   const variants = {
     primary:

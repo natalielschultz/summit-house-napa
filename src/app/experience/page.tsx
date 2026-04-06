@@ -155,7 +155,7 @@ export default function ExperiencePage() {
                             {node.hours}
                           </span>
                         </div>
-                        <h3 className="font-serif text-2xl md:text-3xl text-ink">
+                        <h3 className="font-serif font-light uppercase tracking-[2px] text-xl md:text-2xl text-ink">
                           {node.title}
                         </h3>
                         <div
@@ -199,7 +199,7 @@ export default function ExperiencePage() {
                 <span className="font-sans text-xs uppercase tracking-[0.2em] text-brass">
                   Private Trail
                 </span>
-                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-parchment leading-tight">
+                <h2 className="font-serif font-extralight uppercase tracking-[4px] text-[32px] md:text-5xl text-parchment leading-tight">
                   The Path to
                   <br />
                   Enchanted Hills
@@ -241,7 +241,7 @@ export default function ExperiencePage() {
                   <div className="relative aspect-[3/4] overflow-hidden">
                     <Image src={item.image} alt={item.imageLabel} fill className="object-cover" />
                   </div>
-                  <h3 className="font-serif text-xl md:text-2xl text-ink">
+                  <h3 className="font-serif font-light uppercase tracking-[2px] text-xl md:text-2xl text-ink">
                     {item.title}
                   </h3>
                   <div className="w-10 h-px bg-brass" aria-hidden="true" />
@@ -264,7 +264,7 @@ export default function ExperiencePage() {
                 <span className="font-sans text-xs uppercase tracking-[0.2em] text-brass">
                   2 Acres of Private Land
                 </span>
-                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-ink leading-tight">
+                <h2 className="font-serif font-extralight uppercase tracking-[4px] text-[32px] md:text-5xl text-ink leading-tight">
                   Outdoor Living
                 </h2>
                 <div className="w-16 h-px bg-brass" aria-hidden="true" />
@@ -317,7 +317,7 @@ export default function ExperiencePage() {
               <span className="font-sans text-xs uppercase tracking-[0.2em] text-brass">
                 Wine Country at Your Doorstep
               </span>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-ink leading-tight">
+              <h2 className="font-serif font-extralight uppercase tracking-[4px] text-[32px] md:text-5xl text-ink leading-tight">
                 Mount Veeder &amp; Beyond
               </h2>
               <div className="w-16 h-px bg-brass" aria-hidden="true" />

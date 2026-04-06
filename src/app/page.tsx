@@ -97,7 +97,7 @@ export default function Home() {
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <Image src={pillar.image} alt={pillar.label} fill className="object-cover" />
                   </div>
-                  <h3 className="font-serif text-2xl text-ink">
+                  <h3 className="font-serif font-light uppercase tracking-[2px] text-xl md:text-2xl text-ink">
                     {pillar.title}
                   </h3>
                   <p className="font-sans text-base text-text-muted leading-relaxed">
@@ -231,7 +231,7 @@ export default function Home() {
         <div className="mx-auto max-w-4xl px-6 md:px-12 text-center">
           <FadeIn>
             <div className="flex flex-col items-center gap-8">
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-ink leading-tight">
+              <h2 className="font-serif font-extralight uppercase tracking-[4px] text-[32px] md:text-5xl text-ink leading-tight">
                 Monthly stays from $8,000
               </h2>
               <p className="font-sans text-base md:text-lg text-text-muted leading-relaxed max-w-xl">
