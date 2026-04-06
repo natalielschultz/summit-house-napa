@@ -15,7 +15,6 @@ export const NAV_LINKS = [
   { label: "Availability", href: "/availability" },
   { label: "Our Story", href: "/about" },
   { label: "Reviews", href: "/reviews" },
-  { label: "Manual", href: "/manual" },
 ] as const;
 
 export const PROPERTY = {

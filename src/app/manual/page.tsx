@@ -1,4 +1,6 @@
 import { Metadata } from "next";
+import { redirect } from "next/navigation";
+import { verifyToken } from "@/lib/magic-link";
 import Hero from "@/components/sections/Hero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import FadeIn from "@/components/animation/FadeIn";
@@ -9,6 +11,7 @@ export const metadata: Metadata = {
   title: "House Manual — A-Frame of Napa",
   description:
     "Everything you need for your stay at A-Frame of Napa. WiFi, hot tub, kitchen, house rules, local recommendations, and more.",
+  robots: { index: false, follow: false },
   alternates: { canonical: "/manual" },
   openGraph: {
     title: "House Manual — A-Frame of Napa",
@@ -67,7 +70,17 @@ function ManualSection({
   );
 }
 
-export default function ManualPage() {
+export default async function ManualPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ token?: string }>;
+}) {
+  const { token } = await searchParams;
+
+  if (!token || !verifyToken(token).valid) {
+    redirect("/manual/access-denied");
+  }
+
   return (
     <>
       <Hero
