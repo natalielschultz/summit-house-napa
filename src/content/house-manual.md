@@ -12,7 +12,7 @@ Check-in time is **4:00 PM**. The property is located on Mount Veeder in Napa Va
 
 **3119 Mt. Veeder Rd, Napa, CA 94558**
 
-> ℹ️ GPS works better than the street address on Mount Veeder. We recommend entering the address into Google Maps or Apple Maps before you start driving — cell service drops off on the way up.
+> GPS works better than the street address on Mount Veeder. We recommend entering the address into Google Maps or Apple Maps before you start driving — cell service drops off on the way up.
 
 Please do a walk-through of the house when you arrive and make sure everything meets your standards. If something doesn't look right, is broken, or you have any questions, call us immediately.
 
@@ -26,13 +26,13 @@ There is a **lockbox at the entrance** with three keys provided for the front do
 
 When you head out, we recommend placing the keys back in the lockbox so they're always easy to find. If you get locked out, just text us and we'll arrange for someone nearby to bring a key.
 
-> ⚠️ There is a **$250 replacement fee** for lost keys. Please keep track of all three.
+> There is a **$250 replacement fee** for lost keys. Please keep track of all three.
 
 ### WiFi
 
 The WiFi network name and password are posted on the kitchen whiteboard.
 
-> ℹ️ For security, the WiFi credentials are posted on the kitchen whiteboard only — they are not included in this manual.
+> For security, the WiFi credentials are posted on the kitchen whiteboard only — they are not included in this manual.
 
 ### First Things When You Arrive
 
@@ -56,7 +56,7 @@ Check-out time is **10:00 AM**. If you anticipate running late, reach out and we
 7. Strip the bed linens and leave them in a pile near the washer
 8. Lock the front door and return all three keys to the lockbox
 
-> ℹ️ You do not need to do a deep clean. Our cleaning team handles turnover. Just leave the space tidy and follow the steps above.
+> You do not need to do a deep clean. Our cleaning team handles turnover. Just leave the space tidy and follow the steps above.
 
 ---
 
@@ -115,7 +115,7 @@ The heating system is controlled by an **Ecobee smart thermostat** located in th
 
 The temperature sensors are small white cubes — one in the downstairs bedroom, one in the upstairs main room. They help the system balance the temperature between floors.
 
-> ℹ️ You're welcome to adjust the thermostat yourself using the touch screen. You can also let us know your temperature preferences and we'll adjust it remotely for you — whatever's easier.
+> You're welcome to adjust the thermostat yourself using the touch screen. You can also let us know your temperature preferences and we'll adjust it remotely for you — whatever's easier.
 
 ### Lutron Lighting
 
@@ -135,7 +135,7 @@ For the safety of our guests and property, there are exterior security cameras o
 
 These cameras monitor the perimeter only and are in place for guest safety and property protection (fire, break-ins, etc.). Recordings are reviewed only when there's an incident.
 
-> ℹ️ There are no cameras inside the house. Exterior cameras are for security purposes only.
+> There are no cameras inside the house. Exterior cameras are for security purposes only.
 
 ### Sonos Audio System
 
@@ -177,7 +177,7 @@ The WiFi network name and password are posted on the kitchen whiteboard. Starlin
 4. If it doesn't come back, check whether the Starlink dish outside has a clear view of the sky (heavy snow or debris can block it)
 5. If still down after 10 minutes, contact us
 
-> ℹ️ Internet speed may be diminished or interrupted during power outages. Starlink requires power to operate.
+> Internet speed may be diminished or interrupted during power outages. Starlink requires power to operate.
 
 ### Cell Service
 
@@ -284,7 +284,7 @@ The fire pit on the deck runs on propane. The propane tank is located next to th
 - Never leave the fire pit unattended
 - Turn off the propane valve when you're done — don't just turn off the igniter
 
-> ⚠️ **Fire season (typically June – October):** Outdoor burning may be restricted by Napa County on high-risk days. We'll notify you of any burn bans. When in doubt, check [countyofnapa.org](https://www.countyofnapa.org) or contact us.
+> **Fire season (typically June – October):** Outdoor burning may be restricted by Napa County on high-risk days. We'll notify you of any burn bans. When in doubt, check [countyofnapa.org](https://www.countyofnapa.org) or contact us.
 
 ---
 
@@ -298,7 +298,7 @@ To turn the hot tub on, flip up the circuit breaker in the **green circuit box**
 
 The spa is pre-heated and ready to use when you arrive, set between 100°F and 102°F. To adjust the temperature, press the OPTIONS button on the control panel, select Temperature, and use the up/down arrows (range: 80°F–104°F). When the READY light is green, the water is at your set temperature.
 
-> ℹ️ A detailed **Hot Tub Guest Guide** is provided separately with full instructions for jets, lighting, the water feature, and troubleshooting.
+> A detailed **Hot Tub Guest Guide** is provided separately with full instructions for jets, lighting, the water feature, and troubleshooting.
 
 ### After Each Use
 
@@ -348,11 +348,11 @@ The sauna has a built-in speaker system with **Bluetooth, FM radio, USB, and AUX
 
 It also includes **chromotherapy (color therapy) lights** — use the included remote to select a single color or press Cycle to rotate through all colors during your session.
 
-> ℹ️ A detailed **Infrared Sauna Guest Guide** is provided separately with full information on the three heating zones, health benefits, color therapy, and safety guidelines.
+> A detailed **Infrared Sauna Guest Guide** is provided separately with full information on the three heating zones, health benefits, color therapy, and safety guidelines.
 
 ### Sauna Rules
 
-> ⚠️ If you are not experienced using a sauna, please use additional caution.
+> If you are not experienced using a sauna, please use additional caution.
 
 **Medical:**
 
@@ -441,7 +441,7 @@ There are three bins outside:
 
 ### Wildlife Warning
 
-> ⚠️ **Do not leave trash bags, food scraps, or anything edible outside the bins.** The house is in a forest with active wildlife, and animals will get into anything they can access. Always make sure the bin lids are fully closed. If a bin is too full to close completely, hold off until it's been emptied on pickup day rather than leaving it open.
+> **Do not leave trash bags, food scraps, or anything edible outside the bins.** The house is in a forest with active wildlife, and animals will get into anything they can access. Always make sure the bin lids are fully closed. If a bin is too full to close completely, hold off until it's been emptied on pickup day rather than leaving it open.
 
 ---
 
@@ -451,11 +451,11 @@ There are three bins outside:
 
 The house is on a **natural spring well**. The tap water is safe to drink.
 
-> ⚠️ The well pump is electric, which means **there is no running water during power outages**. If you know a storm is coming, consider filling a pot or two with water as a precaution.
+> The well pump is electric, which means **there is no running water during power outages**. If you know a storm is coming, consider filling a pot or two with water as a precaution.
 
 ### Septic System
 
-> ⚠️ **The house is on a septic system.** Please flush only toilet paper — no wipes, feminine products, or anything else. Being mindful of water use also helps keep things running smoothly.
+> **The house is on a septic system.** Please flush only toilet paper — no wipes, feminine products, or anything else. Being mindful of water use also helps keep things running smoothly.
 
 ### Additional Septic Guidelines
 
@@ -470,7 +470,7 @@ There are plungers located in each bathroom. If a plunger doesn't fix the issue,
 
 Spread laundry loads across the week rather than doing many loads in one day. Large volumes of water at once can overwhelm the septic system.
 
-> ℹ️ If you notice slow drains, gurgling sounds, or sewage odor near the house, contact us immediately. Do not attempt to address septic issues yourself.
+> If you notice slow drains, gurgling sounds, or sewage odor near the house, contact us immediately. Do not attempt to address septic issues yourself.
 
 ---
 
@@ -500,7 +500,7 @@ If a stove burner or the grill won't ignite, try lighting it manually with a lon
 
 ## Power Outages
 
-> ℹ️ Power outages happen occasionally on Mount Veeder, especially during storms and high wind events. They're usually resolved within a few hours.
+> Power outages happen occasionally on Mount Veeder, especially during storms and high wind events. They're usually resolved within a few hours.
 
 ### When the Power Goes Out
 
@@ -515,7 +515,7 @@ If a stove burner or the grill won't ignite, try lighting it manually with a lon
 - The propane deck fire pit works without electricity
 - The propane outdoor grill works without electricity
 
-> ⚠️ **Important:** The propane stove does not ignite without electricity, and the well pump requires power — meaning **no water and no stove** during outages. The propane fire pits and outdoor grill still work. If a storm is forecast, consider filling pots with water in advance.
+> **Important:** The propane stove does not ignite without electricity, and the well pump requires power — meaning **no water and no stove** during outages. The propane fire pits and outdoor grill still work. If a storm is forecast, consider filling pots with water in advance.
 
 ### Reporting an Outage
 
@@ -613,7 +613,7 @@ You're living on 4+ acres of mountain forest. Wildlife is part of the experience
 
 ## Emergency Contacts
 
-> 🚨 **EMERGENCY: Call 911** — For fire, medical emergency, or immediate danger, always call 911 first.
+> **EMERGENCY: Call 911** — For fire, medical emergency, or immediate danger, always call 911 first.
 
 ### Property Contacts
 
@@ -652,7 +652,7 @@ Poison Control: **1-800-222-1222**
 > **FILL IN:** Pest control: name & phone
 > **FILL IN:** Septic service: name & phone
 
-> ℹ️ The property address for emergency dispatch is: **3119 Mt. Veeder Rd, Napa, CA 94558**. 911 dispatches to this address.
+> The property address for emergency dispatch is: **3119 Mt. Veeder Rd, Napa, CA 94558**. 911 dispatches to this address.
 
 ---
 
