@@ -1,5 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { getManualAsText } from "@/lib/parse-manual";
+import { verifyToken } from "@/lib/magic-link";
 
 const client = new Anthropic();
 
@@ -12,8 +13,49 @@ Answer guest questions about the property using the house manual knowledge below
 HOUSE MANUAL:
 ${manualText}`;
 
+// In-memory rate limiter: 20 requests per hour per IP
+const RATE_LIMIT = 20;
+const RATE_WINDOW = 60 * 60 * 1000; // 1 hour
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_WINDOW });
+    return true;
+  }
+
+  if (entry.count >= RATE_LIMIT) return false;
+
+  entry.count++;
+  return true;
+}
+
 export async function POST(request: Request) {
-  const { messages } = await request.json();
+  // Rate limit by IP
+  const ip =
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    request.headers.get("x-real-ip") ||
+    "unknown";
+
+  if (!checkRateLimit(ip)) {
+    return Response.json(
+      { error: "Too many requests. Please try again later." },
+      { status: 429 }
+    );
+  }
+
+  const { messages, token } = await request.json();
+
+  // Verify magic link token
+  if (!token || !verifyToken(token).valid) {
+    return Response.json(
+      { error: "Unauthorized. A valid guest link is required." },
+      { status: 401 }
+    );
+  }
 
   const stream = client.messages.stream({
     model: "claude-sonnet-4-20250514",

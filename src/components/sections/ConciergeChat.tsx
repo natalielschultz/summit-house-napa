@@ -23,7 +23,13 @@ export default function ConciergeChat() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [token, setToken] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setToken(params.get("token") || "");
+  }, []);
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -45,7 +51,7 @@ export default function ConciergeChat() {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: updated }),
+        body: JSON.stringify({ messages: updated, token }),
       });
 
       if (!res.ok) throw new Error("Chat request failed");
