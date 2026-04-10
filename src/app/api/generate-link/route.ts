@@ -21,7 +21,7 @@ export async function POST(request: Request) {
   }
 
   const token = createToken(expiry);
-  const url = `${process.env.NEXT_PUBLIC_SITE_URL || "https://www.aframeofnapa.com"}/manual?token=${token}`;
+  const url = `${process.env.NEXT_PUBLIC_SITE_URL || "https://www.summithousenapa.com"}/manual?token=${token}`;
 
   return Response.json({ token, url, expiresAt: expiry.toISOString() });
 }

@@ -87,7 +87,7 @@ export default function ConciergeChat() {
     } catch {
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: "Sorry, I'm having trouble connecting. Please try again or email stay@aframeofnapa.com." },
+        { role: "assistant", content: "Sorry, I'm having trouble connecting. Please try again or email stay@summithousenapa.com." },
       ]);
     } finally {
       setLoading(false);
@@ -198,7 +198,7 @@ export default function ConciergeChat() {
             {messages.length === 0 && (
               <div className="text-center py-8">
                 <p className="font-sans" style={{ fontSize: "14px", color: "#8B9D83" }}>
-                  Welcome! Ask me anything about the A-Frame — WiFi, hot tub, local restaurants, and more.
+                  Welcome! Ask me anything about Summit House — WiFi, hot tub, local restaurants, and more.
                 </p>
               </div>
             )}

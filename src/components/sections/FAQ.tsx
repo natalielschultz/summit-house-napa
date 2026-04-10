@@ -12,7 +12,7 @@ const faqData: FAQItem[] = [
   {
     question: "What is the minimum stay?",
     answer:
-      "Our minimum stay is one month. The A-Frame is designed for extended stays — whether you're working remotely, taking a sabbatical, or simply slowing down. We find that a full month allows guests to truly settle into the rhythm of the mountain.",
+      "Our minimum stay is one month. Summit House is designed for extended stays — whether you're working remotely, taking a sabbatical, or simply slowing down. We find that a full month allows guests to truly settle into the rhythm of the mountain.",
   },
   {
     question: "Are pets allowed?",
@@ -22,7 +22,7 @@ const faqData: FAQItem[] = [
   {
     question: "What is the cancellation policy?",
     answer:
-      "We require a 50% deposit to confirm your booking, with the balance due 30 days before check-in. Cancellations made more than 60 days before check-in receive a full refund of the deposit. Cancellations within 30-60 days receive a 50% refund. We are happy to discuss rescheduling options on a case-by-case basis.",
+      "We require a 50% deposit to confirm your booking, with the balance due 31 days before check-in. Cancellations made more than 60 days before check-in receive a full refund of the deposit. Cancellations within 31-60 days receive a 50% refund. We are happy to discuss rescheduling options on a case-by-case basis.",
   },
   {
     question: "Is cleaning included?",

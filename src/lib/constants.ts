@@ -1,11 +1,11 @@
 export const SITE = {
-  name: "A-Frame of Napa",
+  name: "Summit House Napa",
   tagline: "A summit retreat on Mount Veeder",
   description: "A private mountaintop sanctuary hidden among ancient redwoods at the summit of Mount Veeder, Napa Valley.",
-  email: "stay@aframeofnapa.com",
+  email: "stay@summithousenapa.com",
   phone: "",
-  instagram: "aframeofnapa",
-  url: "https://www.aframeofnapa.com",
+  instagram: "summithousenapa",
+  url: "https://www.summithousenapa.com",
 } as const;
 
 export const NAV_LINKS = [
@@ -34,13 +34,13 @@ export const PRICING = {
     {
       name: "Peak Season",
       months: "April–Nov",
-      range: "$12,000–$16,000",
+      range: "$16,000–$18,000",
       description: "Summer through harvest. The most sought-after months in Napa Valley.",
     },
     {
       name: "Off-Peak",
       months: "Dec–March",
-      range: "$8,000–$11,000",
+      range: "$10,000–$12,000",
       description: "Quieter months on the mountain. Ideal for remote work, creative retreats, and winter wellness.",
     },
   ],
@@ -93,7 +93,7 @@ export const REVIEWS = [
     name: "James & Emily",
     date: "August 2024",
     rating: 5,
-    text: "We've stayed in luxury rentals across Napa and Sonoma, and nothing compares to the A-Frame. The privacy, the ancient redwoods, the outdoor shower — it's a different world up on Mount Veeder. The renovation is stunning. We're already planning our return.",
+    text: "We've stayed in luxury rentals across Napa and Sonoma, and nothing compares to Summit House. The privacy, the ancient redwoods, the outdoor shower — it's a different world up on Mount Veeder. The renovation is stunning. We're already planning our return.",
   },
   {
     name: "Michael",

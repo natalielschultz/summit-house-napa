@@ -9,19 +9,19 @@ import Link from "next/link";
 import { getBreadcrumbSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "The Experience — Trails, Wellness & Wine Country | A-Frame of Napa",
+  title: "The Experience — Trails, Wellness & Wine Country | Summit House Napa",
   description:
     "Discover daily life on Mount Veeder: private meditation trail to Enchanted Hills Waterfall, outdoor hot tub, infrared sauna, and Napa Valley wine country at your doorstep.",
   alternates: { canonical: "/experience" },
   openGraph: {
-    title: "The Experience — Trails, Wellness & Wine Country | A-Frame of Napa",
+    title: "The Experience — Trails, Wellness & Wine Country | Summit House Napa",
     description:
       "Discover daily life on Mount Veeder: private meditation trail, outdoor hot tub, infrared sauna, and Napa Valley wine country at your doorstep.",
     images: [{ url: "/images/sunrise-through-window.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Experience — Trails, Wellness & Wine Country | A-Frame of Napa",
+    title: "The Experience — Trails, Wellness & Wine Country | Summit House Napa",
     description:
       "Discover daily life on Mount Veeder: private meditation trail, outdoor hot tub, infrared sauna, and wine country at your doorstep.",
     images: ["/images/sunrise-through-window.jpg"],
@@ -44,7 +44,7 @@ const timeline = [
     hours: "10:00 AM – 2:00 PM",
     title: "Focus & Flow",
     description:
-      "With Starlink satellite internet reaching every corner of the property, the A-Frame becomes a creative workspace without equal. Settle into the dedicated desk, the conversation pit, or a chair on the front deck — wherever focus finds you. The distance from the city is not a limitation here. It is the entire point. Writers, founders, and remote professionals have all found that the mountain sharpens their thinking.",
+      "With Starlink satellite internet reaching every corner of the property, Summit House becomes a creative workspace without equal. Settle into the dedicated desk, the conversation pit, or a chair on the front deck — wherever focus finds you. The distance from the city is not a limitation here. It is the entire point. Writers, founders, and remote professionals have all found that the mountain sharpens their thinking.",
     imageLabel:
       "Laptop and coffee on the front deck with valley views beyond",
     image: "/images/sofa-window-trees.jpg",
@@ -86,7 +86,7 @@ const wellnessSuite = [
       "The outdoor infrared sauna sits among the trees, offering deep therapeutic heat in a setting that feels more like a forest ritual than a wellness amenity. Step out into cool mountain air, let the contrast wake every nerve, and understand why this is not a feature — it is a practice.",
     imageLabel:
       "Cedar infrared sauna with glass door opening onto the forest floor",
-    image: "/images/aframe-exterior-front.jpg",
+    image: "/images/summit-house-exterior-front.jpg",
   },
   {
     title: "Outdoor Shower",
@@ -269,7 +269,7 @@ export default function ExperiencePage() {
                 </h2>
                 <div className="w-16 h-px bg-brass" aria-hidden="true" />
                 <p className="font-sans text-base md:text-lg text-text-muted leading-relaxed">
-                  The A-Frame sits on two acres of private land at the
+                  Summit House sits on two acres of private land at the
                   summit of Mount Veeder. This is not a shared compound or a
                   resort with neighbors. It is your own ridge, your own forest,
                   your own silence.

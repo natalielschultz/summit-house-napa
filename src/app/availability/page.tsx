@@ -9,19 +9,19 @@ import { getDayAvailability, computeSeasonalRates, formatRateRange } from "@/lib
 import { getFAQSchema, getBreadcrumbSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Availability & Monthly Rates | A-Frame of Napa",
+  title: "Availability & Monthly Rates | Summit House Napa",
   description:
-    "Check availability and seasonal rates for the A-Frame of Napa. Monthly stays from $8,000–$16,000. Peak season April–November, off-peak December–March. Book direct.",
+    "Check availability and seasonal rates for Summit House Napa. Monthly stays from $8,000–$16,000. Peak season April–November, off-peak December–March. Book direct.",
   alternates: { canonical: "/availability" },
   openGraph: {
-    title: "Availability & Monthly Rates | A-Frame of Napa",
+    title: "Availability & Monthly Rates | Summit House Napa",
     description:
-      "Check availability and seasonal rates for the A-Frame of Napa. Monthly stays from $8,000–$16,000. Book direct for the best experience.",
+      "Check availability and seasonal rates for Summit House Napa. Monthly stays from $8,000–$16,000. Book direct for the best experience.",
     images: [{ url: "/images/living-room-full-chandelier.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Availability & Monthly Rates | A-Frame of Napa",
+    title: "Availability & Monthly Rates | Summit House Napa",
     description:
       "Monthly stays from $8,000–$16,000. Peak season April–November, off-peak December–March.",
     images: ["/images/living-room-full-chandelier.jpg"],
@@ -39,13 +39,13 @@ const steps = [
     number: "02",
     title: "A Personal Call with Your Host",
     description:
-      "Within 24 hours, your host will reach out to discuss your stay in detail — answering questions, sharing local recommendations, and making sure the A-Frame is the right fit for your trip.",
+      "Within 24 hours, your host will reach out to discuss your stay in detail — answering questions, sharing local recommendations, and making sure Summit House is the right fit for your trip.",
   },
   {
     number: "03",
     title: "Confirm & Book",
     description:
-      "Once everything feels right, you'll receive a booking agreement and invoice. A 50% deposit secures your dates, with the balance due 30 days before check-in.",
+      "Once everything feels right, you'll receive a booking agreement and invoice. A 50% deposit secures your dates, with the balance due 31 days before check-in.",
   },
 ];
 

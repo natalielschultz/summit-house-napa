@@ -7,19 +7,19 @@ import CTABanner from "@/components/sections/CTABanner";
 import { getBreadcrumbSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Our Story — The Renovation & Philosophy | A-Frame of Napa",
+  title: "Our Story — The Renovation & Philosophy | Summit House Napa",
   description:
     "How a 1969 A-frame cabin on Mount Veeder was restored into a luxury monthly retreat. The renovation journey, hosting philosophy, and why booking direct matters.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "Our Story — The Renovation & Philosophy | A-Frame of Napa",
+    title: "Our Story — The Renovation & Philosophy | Summit House Napa",
     description:
       "How a 1969 A-frame cabin on Mount Veeder was restored into a luxury monthly retreat. The renovation journey and hosting philosophy.",
     images: [{ url: "/images/great-room-chandelier-angle.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Our Story — The Renovation & Philosophy | A-Frame of Napa",
+    title: "Our Story — The Renovation & Philosophy | Summit House Napa",
     description:
       "How a 1969 A-frame cabin on Mount Veeder was restored into a luxury monthly retreat.",
     images: ["/images/great-room-chandelier-angle.jpg"],
@@ -49,13 +49,13 @@ export default function AboutPage() {
                 align="left"
               />
               <div className="mt-8 relative aspect-[3/4] overflow-hidden">
-                <Image src="/images/aframe-exterior-front.jpg" alt="The A-Frame exterior nestled among ancient redwoods" fill className="object-cover" />
+                <Image src="/images/summit-house-exterior-front.jpg" alt="Summit House exterior nestled among ancient redwoods" fill className="object-cover" />
               </div>
             </FadeIn>
             <FadeIn delay={0.2} className="lg:col-span-8 flex items-center">
               <div className="space-y-6 font-sans text-base md:text-lg text-text leading-relaxed">
                 <p>
-                  The A-Frame sits at the very summit of Mount Veeder, tucked
+                  Summit House sits at the very summit of Mount Veeder, tucked
                   among ancient redwoods at the end of a winding mountain road.
                   When the property was first discovered, it had been quietly
                   aging for decades — a 1969 A-frame cabin with extraordinary

@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Button from "@/components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "Access Required — A-Frame of Napa",
+  title: "Access Required — Summit House Napa",
   robots: { index: false, follow: false },
 };
 
@@ -21,10 +21,10 @@ export default function AccessDeniedPage() {
         <p className="mt-4 font-sans text-sm text-text-muted">
           Link expired? Contact us at{" "}
           <a
-            href="mailto:stay@aframeofnapa.com"
+            href="mailto:stay@summithousenapa.com"
             className="text-brass underline underline-offset-2"
           >
-            stay@aframeofnapa.com
+            stay@summithousenapa.com
           </a>{" "}
           for a new one.
         </p>

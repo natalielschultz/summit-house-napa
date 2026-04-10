@@ -147,7 +147,7 @@ export function computeSeasonalRates(days: DayAvailability[]): SeasonalRates {
   for (const { total, count, month } of monthlyTotals.values()) {
     // Only count full or near-full months (25+ days) for accurate ranges
     if (count < 25) continue;
-    // Estimate 30-day rate from actual daily totals
+    // Estimate 31-day rate from actual daily totals
     const monthlyRate = Math.round((total / count) * 30);
 
     if (isPeakMonth(month)) {

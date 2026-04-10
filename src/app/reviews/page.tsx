@@ -9,8 +9,8 @@ import { getReviews, getReviewStats } from "@/lib/reviews";
 
 export async function generateMetadata(): Promise<Metadata> {
   const stats = await getReviewStats();
-  const title = `Guest Reviews — ${stats.rating} Rating | A-Frame of Napa`;
-  const description = `Read verified guest reviews of the A-Frame of Napa. Rated ${stats.rating} out of 5 from ${stats.count} Airbnb reviews. See what guests say about this luxury Mount Veeder retreat.`;
+  const title = `Guest Reviews — ${stats.rating} Rating | Summit House Napa`;
+  const description = `Read verified guest reviews of Summit House Napa. Rated ${stats.rating} out of 5 from ${stats.count} Airbnb reviews. See what guests say about this luxury Mount Veeder retreat.`;
 
   return {
     title,
@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: { canonical: "/reviews" },
     openGraph: {
       title,
-      description: `Rated ${stats.rating} out of 5 from ${stats.count} verified Airbnb reviews. See what guests say about this luxury Mount Veeder retreat.`,
+      description: `Rated ${stats.rating} out of 5 from ${stats.count} verified Airbnb reviews. See what guests say about Summit House Napa, a luxury Mount Veeder retreat.`,
       images: [{ url: "/images/hanging-chair-sunlit.jpg", width: 1200, height: 630 }],
     },
     twitter: {

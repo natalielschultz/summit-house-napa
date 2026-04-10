@@ -6,19 +6,19 @@ import CTABanner from "@/components/sections/CTABanner";
 import { getBreadcrumbSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Mount Veeder, Napa Valley — Location & Access | A-Frame of Napa",
+  title: "Mount Veeder, Napa Valley — Location & Access | Summit House Napa",
   description:
     "Located at the summit of Mount Veeder, 15 minutes from downtown Napa. Proximity to wineries, restaurants, and San Francisco. Directions and travel tips.",
   alternates: { canonical: "/location" },
   openGraph: {
-    title: "Mount Veeder, Napa Valley — Location & Access | A-Frame of Napa",
+    title: "Mount Veeder, Napa Valley — Location & Access | Summit House Napa",
     description:
       "Located at the summit of Mount Veeder, 15 minutes from downtown Napa. Proximity to wineries, restaurants, and San Francisco.",
     images: [{ url: "/images/sunset-silhouette-window.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mount Veeder, Napa Valley — Location & Access | A-Frame of Napa",
+    title: "Mount Veeder, Napa Valley — Location & Access | Summit House Napa",
     description:
       "Located at the summit of Mount Veeder, 15 minutes from downtown Napa.",
     images: ["/images/sunset-silhouette-window.jpg"],
@@ -148,7 +148,7 @@ export default function LocationPage() {
                 Interactive map coming soon
               </p>
               <p className="font-sans text-sm text-text-muted max-w-md text-center leading-relaxed">
-                The A-Frame is located at the summit of Mount Veeder, approximately
+                Summit House is located at the summit of Mount Veeder, approximately
                 15 minutes from downtown Napa via a scenic mountain road. Exact
                 address shared upon booking confirmation.
               </p>

@@ -1,8 +1,8 @@
-# A-Frame of Napa
+# Summit House Napa
 > Luxury monthly vacation rental on Mount Veeder, Napa Valley, California.
 
 ## About
-A-Frame of Napa is a restored 1969 A-frame cabin available for monthly rentals on Mount Veeder in Napa Valley. 3 bedrooms, 2.5 bathrooms, sleeps 11. 2 private acres with ancient redwoods, hot tub, infrared sauna, outdoor shower, and meditation trail. Starlink satellite internet for reliable remote work. 15 minutes from downtown Napa.
+Summit House Napa is a restored 1969 A-frame cabin available for monthly rentals on Mount Veeder in Napa Valley. 3 bedrooms, 2.5 bathrooms, sleeps 11. 2 private acres with ancient redwoods, hot tub, infrared sauna, outdoor shower, and meditation trail. Starlink satellite internet for reliable remote work. 15 minutes from downtown Napa.
 
 ## Pricing
 - Peak Season (April–November): $12,000–$16,000/month
@@ -31,17 +31,17 @@ A-Frame of Napa is a restored 1969 A-frame cabin available for monthly rentals o
 Rated 4.88 out of 5 from 16 verified Airbnb reviews.
 
 ## Pages
-- [Property Details](https://www.aframeofnapa.com/property)
-- [The Experience](https://www.aframeofnapa.com/experience)
-- [Location & Access](https://www.aframeofnapa.com/location)
-- [Availability & Rates](https://www.aframeofnapa.com/availability)
-- [Guest Reviews](https://www.aframeofnapa.com/reviews)
-- [Our Story](https://www.aframeofnapa.com/about)
+- [Property Details](https://www.summithousenapa.com/property)
+- [The Experience](https://www.summithousenapa.com/experience)
+- [Location & Access](https://www.summithousenapa.com/location)
+- [Availability & Rates](https://www.summithousenapa.com/availability)
+- [Guest Reviews](https://www.summithousenapa.com/reviews)
+- [Our Story](https://www.summithousenapa.com/about)
 
 ## Booking
-Website: https://www.aframeofnapa.com
-Availability: https://www.aframeofnapa.com/availability
-Email: stay@aframeofnapa.com
+Website: https://www.summithousenapa.com
+Availability: https://www.summithousenapa.com/availability
+Email: stay@summithousenapa.com
 
 ## Key Policies
 - Minimum stay: 30 days

@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 const config = {
-  siteUrl: 'https://www.aframeofnapa.com',
+  siteUrl: 'https://www.summithousenapa.com',
   generateRobotsTxt: false,
   changefreq: 'weekly',
   priority: 0.7,

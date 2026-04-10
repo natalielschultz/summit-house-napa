@@ -1,4 +1,4 @@
-# A-Frame of Napa — Website Copy Review & Changes
+# Summit House Napa — Website Copy Review & Changes
 
 **Date:** March 29, 2026
 
@@ -12,7 +12,7 @@ All references to the owner's first name have been replaced with "your host" (an
 
 | File | Original | Changed To |
 |------|----------|------------|
-| `src/app/about/page.tsx` — metadata | "About Your Host — Natalie" | "The Story — A-Frame of Napa" |
+| `src/app/about/page.tsx` — metadata | "About Your Host — Natalie" | "The Story — Summit House Napa" |
 | `src/app/about/page.tsx` — hero | "About Your Host" | "The Story" |
 | `src/app/about/page.tsx` — section title | "Natalie's Story" | "The Discovery" |
 | `src/app/about/page.tsx` — portrait | "Portrait of Natalie" | Property exterior photo |

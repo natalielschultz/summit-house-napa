@@ -18,7 +18,7 @@ const pillars = [
       "A fully restored 1969 A-frame cabin with sunken conversation pit, designer finishes, and two acres of private land.",
     href: "/property",
     label: "Mountain cabin with soaring A-frame ceilings and floor-to-ceiling windows",
-    image: "/images/aframe-exterior-front.jpg",
+    image: "/images/summit-house-exterior-front.jpg",
   },
   {
     title: "The Experience",
@@ -60,7 +60,7 @@ export default function Home() {
       {/* 1. Hero */}
       <Hero
         image="/images/deck-sunset-firepit.jpg"
-        title="A-Frame of Napa"
+        title="Summit House Napa"
         subtitle="A private mountaintop retreat above Napa Valley — two acres of ancient redwoods at the peak of Mount Veeder."
         cta={{ label: "Check Availability", href: "/availability" }}
       />
@@ -86,7 +86,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 md:px-12">
           <FadeIn>
             <SectionHeading
-              title="Discover the A-Frame"
+              title="Discover Summit House"
               subtitle="Not a valley floor estate. Not a resort. A mountaintop of your own."
             />
           </FadeIn>

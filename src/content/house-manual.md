@@ -1,4 +1,4 @@
-# A-Frame of Napa — House Manual
+# Summit House Napa — House Manual
 
 *Everything you need to feel at home on the mountain. Bookmark this page for easy reference throughout your stay.*
 
@@ -6,13 +6,13 @@
 
 ## Welcome
 
-Welcome to the A-Frame of Napa — a renovated 1969 A-frame cabin nestled on 2 acres of private mountain forest on Mount Veeder. You're surrounded by ancient redwoods, with a meditation trail through the woods, an outdoor shower under the trees, a zen garden, an infrared sauna, and a hot tub on the back deck.
+Welcome to Summit House Napa — a renovated 1969 A-frame cabin nestled on 2 acres of private mountain forest on Mount Veeder. You're surrounded by ancient redwoods, with a meditation trail through the woods, an outdoor shower under the trees, a zen garden, an infrared sauna, and a hot tub on the back deck.
 
 This is your space to slow down and settle in. If you need anything at all during your stay — a recommendation, help with something in the house, or just a question — reach out anytime. We're here for you.
 
 **Natalie** (Owner)
 Phone: (707) 400-9883
-Email: natalie@aframeofnapa.com
+Email: stay@summithousenapa.com
 
 ---
 
@@ -38,7 +38,7 @@ If you get locked out, contact Natalie for the fastest solution.
 
 ### WiFi
 
-- **Network:** Natalie1
+- **Network:** SummitHouse
 - **Password:** 3119MtVeederaframe
 
 The internet is powered by **Starlink satellite**, which delivers fast, reliable speeds for streaming, video calls, and remote work — even at this mountain elevation.
@@ -186,7 +186,7 @@ The property uses **Starlink satellite internet**, which provides fast, reliable
 
 ### Cell Service
 
-A-Frame is a rural property, which means cell service may be spotty depending on your carrier. If you're experiencing issues, we recommend enabling **WiFi calling** on your phone — it usually solves the problem.
+Summit House is a rural property, which means cell service may be spotty depending on your carrier. If you're experiencing issues, we recommend enabling **WiFi calling** on your phone — it usually solves the problem.
 
 - iPhone: Settings → Phone → WiFi Calling → turn on
 - Android: Settings → Connections → WiFi Calling → turn on
@@ -604,7 +604,7 @@ You're on 2 acres of mountain forest. Wildlife is part of the experience — and
 
 **Natalie** (Owner) — available 24/7
 Phone: (707) 400-9883
-Email: natalie@aframeofnapa.com
+Email: stay@summithousenapa.com
 
 If you can't reach Natalie, a backup contact will be provided in your booking confirmation with the name and number of someone local who can help.
 
@@ -645,6 +645,6 @@ Poison Control: **1-800-222-1222**
 
 ---
 
-**A-Frame of Napa** — Mount Veeder, Napa Valley
+**Summit House Napa** — Mount Veeder, Napa Valley
 
 *Last updated: April 2026*

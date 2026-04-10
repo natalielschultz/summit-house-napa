@@ -83,7 +83,7 @@ export default function AvailabilityCalendar({ days, onDatesSelect }: Props) {
     }
   }
 
-  // Check if a 30-night stay starting from a date is fully available
+  // Check if a 31-night stay starting from a date is fully available
   const canCheckIn = useCallback(
     (dateStr: string): boolean => {
       for (let i = 0; i < MIN_NIGHTS; i++) {
@@ -96,7 +96,7 @@ export default function AvailabilityCalendar({ days, onDatesSelect }: Props) {
     [dayMap]
   );
 
-  // Calculate total for a check-in date (30 nights)
+  // Calculate total for a check-in date (31 nights)
   const calculateTotal = useCallback(
     (checkIn: string): number => {
       let total = 0;
@@ -293,7 +293,7 @@ export default function AvailabilityCalendar({ days, onDatesSelect }: Props) {
               aria-hidden="true"
             />
             <p className="font-sans text-sm text-text-muted max-w-md mt-2 leading-relaxed">
-              Choose a check-in date to preview your 30-night stay.
+              Choose a check-in date to preview your 31-night stay.
               Nightly rates reflect seasonal pricing.
             </p>
           </div>

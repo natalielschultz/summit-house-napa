@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | A-Frame of Napa",
-  description: "Terms and conditions for booking and staying at the A-Frame of Napa.",
+  title: "Terms & Conditions | Summit House Napa",
+  description: "Terms and conditions for booking and staying at Summit House Napa.",
   alternates: { canonical: "/terms-and-conditions" },
   robots: "noindex, follow",
 };
@@ -16,16 +16,16 @@ export default function TermsAndConditionsPage() {
         </h1>
         <div className="space-y-6 font-sans text-base text-text leading-relaxed">
           <p>
-            By booking a stay at the A-Frame of Napa, you agree to the following
+            By booking a stay at Summit House Napa, you agree to the following
             terms and conditions. These terms govern the relationship between the
             guest and the property owner for all direct bookings made through
-            aframeofnapa.com.
+            summithousenapa.com.
           </p>
 
           <h2 className="font-serif font-light uppercase tracking-[2px] text-xl text-ink pt-4">Booking & Payment</h2>
           <p>
             A 50% deposit is required to confirm your reservation. The remaining
-            balance is due 30 days prior to check-in. All payments are processed
+            balance is due 31 days prior to check-in. All payments are processed
             securely. Rates are quoted per calendar month and may vary based on
             season and length of stay.
           </p>
@@ -66,10 +66,10 @@ export default function TermsAndConditionsPage() {
           <p>
             For questions about these terms, please contact us at{" "}
             <a
-              href="mailto:stay@aframeofnapa.com"
+              href="mailto:stay@summithousenapa.com"
               className="text-brass hover:text-ink transition-colors"
             >
-              stay@aframeofnapa.com
+              stay@summithousenapa.com
             </a>
             .
           </p>

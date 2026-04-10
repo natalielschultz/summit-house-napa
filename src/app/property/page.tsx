@@ -9,22 +9,22 @@ import { getVacationRentalSchema, getBreadcrumbSchema } from "@/lib/structured-d
 import PropertyNavChips from "@/components/ui/PropertyNavChips";
 
 export const metadata: Metadata = {
-  title: "The Property — Restored 1969 A-Frame Cabin | A-Frame of Napa",
+  title: "The Property — Restored 1969 A-Frame Cabin | Summit House Napa",
   description:
     "Tour a fully restored 1969 A-frame cabin on Mount Veeder. 3BR/2.5BA, 2 acres, hot tub, infrared sauna, sunken conversation pit, and panoramic Napa Valley views.",
   alternates: { canonical: "/property" },
   openGraph: {
-    title: "The Property — Restored 1969 A-Frame Cabin | A-Frame of Napa",
+    title: "The Property — Restored 1969 A-Frame Cabin | Summit House Napa",
     description:
       "Tour a fully restored 1969 A-frame cabin on Mount Veeder. 3BR/2.5BA, 2 acres, hot tub, infrared sauna, and panoramic Napa Valley views.",
-    images: [{ url: "/images/aframe-exterior-foggy.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/images/summit-house-exterior-foggy.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Property — Restored 1969 A-Frame Cabin | A-Frame of Napa",
+    title: "The Property — Restored 1969 A-Frame Cabin | Summit House Napa",
     description:
       "Tour a fully restored 1969 A-frame cabin on Mount Veeder. 3BR/2.5BA, 2 acres, hot tub, infrared sauna, and panoramic Napa Valley views.",
-    images: ["/images/aframe-exterior-foggy.jpg"],
+    images: ["/images/summit-house-exterior-foggy.jpg"],
   },
 };
 
@@ -42,7 +42,7 @@ const roomTour = [
     id: "great-room",
     title: "Great Room & Conversation Pit",
     description:
-      "The heart of the A-Frame is a soaring double-height great room crowned by the iconic triangular roofline. Floor-to-ceiling windows fill the space with filtered light from the surrounding redwoods. At its center, a sunken conversation pit — restored with custom cushions and anchored by a stone fireplace — invites the kind of slow, lingering evenings that define life on the mountain. The Sonos sound system fills the room with warmth, whether it is morning jazz or evening silence you are after.",
+      "The heart of Summit House is a soaring double-height great room crowned by the iconic triangular roofline. Floor-to-ceiling windows fill the space with filtered light from the surrounding redwoods. At its center, a sunken conversation pit — restored with custom cushions and anchored by a stone fireplace — invites the kind of slow, lingering evenings that define life on the mountain. The Sonos sound system fills the room with warmth, whether it is morning jazz or evening silence you are after.",
     imageLabel: "Double-height great room with sunken conversation pit and stone fireplace",
     image: "/images/great-room-window-wall.jpg",
     direction: "left" as const,
@@ -69,7 +69,7 @@ const roomTour = [
     id: "kitchen",
     title: "Kitchen",
     description:
-      "Fully equipped for the kind of cooking that a month-long stay demands — not just reheating, but real meals. Modern appliances, ample counter space, quality cookware, and a layout that makes the kitchen feel like part of the living experience rather than a utility room. Open a bottle of Mount Veeder wine, put something on the stove, and let the evening unfold.",
+      "Fully equipped for the kind of cooking that an extended stay demands — not just reheating, but real meals. Modern appliances, ample counter space, quality cookware, and a layout that makes the kitchen feel like part of the living experience rather than a utility room. Open a bottle of Mount Veeder wine, put something on the stove, and let the evening unfold.",
     imageLabel: "Modern kitchen with open shelving and view into the great room",
     image: "/images/living-room-full-view.jpg",
     direction: "right" as const,
@@ -116,7 +116,7 @@ export default function PropertyPage() {
       />
       {/* 1. Hero */}
       <Hero
-        image="/images/aframe-exterior-foggy.jpg"
+        image="/images/summit-house-exterior-foggy.jpg"
         title="The Property"
         subtitle="A fully restored 1969 A-frame cabin, reimagined for the modern long-stay guest."
       />
@@ -147,7 +147,7 @@ export default function PropertyPage() {
         <div className="mx-auto max-w-7xl px-6 md:px-12">
           <FadeIn>
             <SectionHeading
-              title="A Tour of the A-Frame"
+              title="A Tour of Summit House"
               subtitle="Every room has been restored with intention — honoring the 1969 architecture while equipping every corner for modern comfort."
             />
           </FadeIn>
@@ -194,7 +194,7 @@ export default function PropertyPage() {
           <FadeIn>
             <SectionHeading
               title="Amenities"
-              subtitle="Everything included in your monthly stay — no hidden fees, no nickel-and-diming."
+              subtitle="Everything included in your stay — no hidden fees, no nickel-and-diming."
             />
           </FadeIn>
           <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">

@@ -6,15 +6,15 @@ import FadeIn from "@/components/animation/FadeIn";
 import ConciergeChat from "@/components/sections/ConciergeChat";
 
 export const metadata: Metadata = {
-  title: "House Manual — A-Frame of Napa",
+  title: "House Manual — Summit House Napa",
   description:
-    "Everything you need for your stay at A-Frame of Napa. WiFi, hot tub, kitchen, house rules, local recommendations, and more.",
+    "Everything you need for your stay at Summit House Napa. WiFi, hot tub, kitchen, house rules, local recommendations, and more.",
   robots: { index: false, follow: false },
   alternates: { canonical: "/manual" },
   openGraph: {
-    title: "House Manual — A-Frame of Napa",
+    title: "House Manual — Summit House Napa",
     description:
-      "Everything you need for your stay at A-Frame of Napa. WiFi, hot tub, kitchen, house rules, local recommendations, and more.",
+      "Everything you need for your stay at Summit House Napa. WiFi, hot tub, kitchen, house rules, local recommendations, and more.",
     images: [{ url: "/images/great-room-window-wall.jpg", width: 1200, height: 630 }],
   },
 };
@@ -180,7 +180,7 @@ export default async function ManualPage({
             color: "#F5F2ED",
           }}
         >
-          A-Frame of Napa
+          Summit House Napa
         </p>
         <p
           className="font-sans mt-2"

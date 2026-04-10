@@ -2,11 +2,11 @@ export function getLodgingBusinessSchema(reviewStats?: { rating: string; count: 
   return {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
-    name: "A-Frame of Napa",
+    name: "Summit House Napa",
     description:
       "Restored 1969 A-frame luxury cabin rental on Mount Veeder. 3BR/2.5BA, sleeps 11, 2 acres, hot tub, sauna.",
-    url: "https://www.aframeofnapa.com",
-    email: "stay@aframeofnapa.com",
+    url: "https://www.summithousenapa.com",
+    email: "stay@summithousenapa.com",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Napa",
@@ -41,10 +41,10 @@ export function getVacationRentalSchema(reviewStats?: { rating: string; count: n
   return {
     "@context": "https://schema.org",
     "@type": "VacationRental",
-    name: "A-Frame of Napa Luxury Cabin",
+    name: "Summit House Napa Luxury Cabin",
     description:
       "Restored 1969 A-frame with hot tub, sauna, meditation trail. Sleeps 11 on 2 acres. Full-month luxury rentals in Napa Valley.",
-    url: "https://www.aframeofnapa.com/property",
+    url: "https://www.summithousenapa.com/property",
     numberOfBedrooms: 3,
     numberOfBathroomsTotal: 2.5,
     occupancy: {
@@ -79,7 +79,7 @@ export function getFAQSchema() {
         name: "What is the minimum stay?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "30 days minimum.",
+          text: "31 days minimum.",
         },
       },
       {
@@ -156,7 +156,7 @@ export function getFAQSchema() {
       },
       {
         "@type": "Question",
-        name: "What's the best time to visit A-Frame of Napa?",
+        name: "What's the best time to visit Summit House Napa?",
         acceptedAnswer: {
           "@type": "Answer",
           text: "Peak season (April–November) offers warm weather and harvest energy. Off-peak (December–March) brings quiet, misty mornings and lush green landscapes. Both are exceptional.",
@@ -164,7 +164,7 @@ export function getFAQSchema() {
       },
       {
         "@type": "Question",
-        name: "Is A-Frame of Napa good for remote work?",
+        name: "Is Summit House Napa good for remote work?",
         acceptedAnswer: {
           "@type": "Answer",
           text: "Yes. Starlink satellite internet provides strong speeds for video calls and remote work. The property offers multiple workspaces including a dedicated desk, the conversation pit, and the front deck.",
@@ -175,7 +175,7 @@ export function getFAQSchema() {
         name: "What makes this different from other Napa Valley rentals?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Most Napa rentals are on the valley floor. The A-Frame sits at the summit of Mount Veeder — 2 private acres of ancient redwoods with panoramic views above the valley. It's a mountaintop of your own.",
+          text: "Most Napa rentals are on the valley floor. Summit House sits at the summit of Mount Veeder — 2 private acres of ancient redwoods with panoramic views above the valley. It's a mountaintop of your own.",
         },
       },
     ],
@@ -191,13 +191,13 @@ export function getBreadcrumbSchema(pageName: string, pageUrl: string) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://www.aframeofnapa.com",
+        item: "https://www.summithousenapa.com",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: pageName,
-        item: `https://www.aframeofnapa.com${pageUrl}`,
+        item: `https://www.summithousenapa.com${pageUrl}`,
       },
     ],
   };
