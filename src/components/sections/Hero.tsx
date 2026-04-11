@@ -68,14 +68,16 @@ export default function Hero({
           >
             <motion.h1
               variants={itemVariants}
-              className="font-serif font-thin uppercase tracking-[6px] text-5xl md:text-7xl text-parchment leading-[1.1]"
+              className="font-serif font-light uppercase tracking-[6px] text-5xl md:text-7xl text-parchment leading-[1.1]"
+              style={{ textShadow: "0 2px 12px rgba(0,0,0,0.4)" }}
             >
               {title}
             </motion.h1>
             {subtitle && (
               <motion.p
                 variants={itemVariants}
-                className="font-sans text-lg md:text-xl text-parchment/80 max-w-xl leading-relaxed"
+                className="font-sans text-lg md:text-xl text-parchment/90 max-w-xl leading-relaxed"
+                style={{ textShadow: "0 2px 8px rgba(0,0,0,0.3)" }}
               >
                 {subtitle}
               </motion.p>

@@ -4,7 +4,6 @@ import Hero from "@/components/sections/Hero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
 import FadeIn from "@/components/animation/FadeIn";
-import CountUp from "@/components/animation/CountUp";
 import CTABanner from "@/components/sections/CTABanner";
 import Image from "next/image";
 import Link from "next/link";
@@ -120,56 +119,25 @@ export default function Home() {
       <section className="bg-ink py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6 md:px-12">
           <div className="grid grid-cols-2 md:grid-cols-6 gap-8 md:gap-4 text-center">
-            {stats.map((stat) => (
-              <div key={stat.label} className="flex flex-col items-center gap-2">
-                <span className="font-serif text-4xl md:text-5xl text-brass">
-                  <CountUp end={stat.end} suffix={stat.suffix} />
-                </span>
-                <span className="font-sans text-xs uppercase tracking-[0.2em] text-parchment/70">
-                  {stat.label}
-                </span>
-              </div>
+            {[
+              { value: `${stats[0].end}${stats[0].suffix}`, label: stats[0].label },
+              { value: `${PROPERTY.bathrooms} BA`, label: "Bathrooms" },
+              { value: `${PROPERTY.acres} Acres`, label: "Land" },
+              { value: "Est. 1969", label: "Year Built", smallText: true },
+              { value: "2026", label: "Renovated" },
+              { value: `${PROPERTY.rating}`, label: "Rating" },
+            ].map((item, i) => (
+              <FadeIn key={item.label} delay={i * 0.2}>
+                <div className="flex flex-col items-center gap-2">
+                  <span className={`font-serif ${item.smallText ? "text-3xl md:text-4xl" : "text-4xl md:text-5xl"} text-brass ${item.smallText ? "whitespace-nowrap" : ""}`}>
+                    {item.value}
+                  </span>
+                  <span className="font-sans text-xs uppercase tracking-[0.2em] text-parchment/70">
+                    {item.label}
+                  </span>
+                </div>
+              </FadeIn>
             ))}
-            <div className="flex flex-col items-center gap-2">
-              <span className="font-serif text-4xl md:text-5xl text-brass">
-                {PROPERTY.bathrooms} BA
-              </span>
-              <span className="font-sans text-xs uppercase tracking-[0.2em] text-parchment/70">
-                Bathrooms
-              </span>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <span className="font-serif text-4xl md:text-5xl text-brass">
-                {PROPERTY.acres} Acres
-              </span>
-              <span className="font-sans text-xs uppercase tracking-[0.2em] text-parchment/70">
-                Land
-              </span>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <span className="font-serif text-3xl md:text-4xl text-brass whitespace-nowrap">
-                Est. 1969
-              </span>
-              <span className="font-sans text-xs uppercase tracking-[0.2em] text-parchment/70">
-                Year Built
-              </span>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <span className="font-serif text-4xl md:text-5xl text-brass">
-                2026
-              </span>
-              <span className="font-sans text-xs uppercase tracking-[0.2em] text-parchment/70">
-                Renovated
-              </span>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <span className="font-serif text-4xl md:text-5xl text-brass">
-                {PROPERTY.rating}
-              </span>
-              <span className="font-sans text-xs uppercase tracking-[0.2em] text-parchment/70">
-                Rating
-              </span>
-            </div>
           </div>
         </div>
       </section>
