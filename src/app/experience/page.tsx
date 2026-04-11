@@ -110,6 +110,7 @@ export default function ExperiencePage() {
         image="/images/twilight-deck-lounge-sunset.jpg"
         title="The Experience"
         subtitle="What happens when a month isn't a booking — it's a rhythm."
+        alt="Deck lounge chairs overlooking Napa Valley at sunset from Mount Veeder"
       />
 
       {/* 2. Day Timeline */}

@@ -8,6 +8,7 @@ interface HeroProps {
   image: string;
   title: string;
   subtitle?: string;
+  alt?: string;
   cta?: { label: string; href: string };
   overlayOpacity?: number;
 }
@@ -39,6 +40,7 @@ export default function Hero({
   image,
   title,
   subtitle,
+  alt,
   cta,
   overlayOpacity = 0.3,
 }: HeroProps) {
@@ -46,7 +48,7 @@ export default function Hero({
     <section className="relative h-screen w-full overflow-hidden">
       <Image
         src={image}
-        alt=""
+        alt={alt || title}
         fill
         sizes="100vw"
         className="object-cover"

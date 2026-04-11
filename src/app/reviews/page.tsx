@@ -55,6 +55,7 @@ export default async function ReviewsPage() {
         image="/images/living-room-green-sofa-wide.jpg"
         title="What Guests Say"
         subtitle={`${stats.rating} out of 5 — ${stats.count} reviews on Airbnb.`}
+        alt="Summit House living room with green sofa and redwood forest views through floor-to-ceiling windows"
       />
 
       {/* Featured Review */}

@@ -76,6 +76,7 @@ export default async function AvailabilityPage() {
         image="/images/twilight-great-room-full.jpg"
         title="Availability & Rates"
         subtitle="Extended stays on Mount Veeder, priced by season."
+        alt="Summit House great room illuminated at twilight with floor-to-ceiling windows"
       />
 
       {/* Seasonal Rate Table */}

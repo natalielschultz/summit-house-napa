@@ -38,6 +38,7 @@ export default function GalleryPage() {
         image="/images/twilight-deck-aframe-glowing.jpg"
         title="Gallery"
         subtitle="Every angle of Summit House — from the soaring great room to the redwood-wrapped outdoor spaces."
+        alt="Summit House deck with string lights and outdoor lounge at twilight among Mount Veeder redwoods"
       />
 
       <section className="bg-white py-24 md:py-32">

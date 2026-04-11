@@ -5,7 +5,10 @@ const config = {
   changefreq: 'weekly',
   priority: 0.7,
   generateIndexSitemap: false,
-  exclude: ['/terms-and-conditions'],
+  exclude: ['/terms-and-conditions', '/icon.*', '/admin/*', '/manual/*'],
+  additionalPaths: async (config) => {
+    return [await config.transform(config, '/availability')];
+  },
   transform: async (config, path) => {
     const priorityMap = {
       '/': 1.0,

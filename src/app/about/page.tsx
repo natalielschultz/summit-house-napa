@@ -37,6 +37,7 @@ export default function AboutPage() {
         image="/images/twilight-great-room-chandelier.jpg"
         title="The Story"
         subtitle="How a 1969 A-frame became a mountaintop sanctuary."
+        alt="Summit House great room chandelier glowing warmly beneath the A-frame roofline at dusk"
       />
 
       {/* Origin */}

@@ -134,6 +134,7 @@ export default function PropertyPage() {
         image={getImage("aerial-aframe-deck-closeup").src}
         title="The Property"
         subtitle="A fully restored 1969 A-frame cabin, reimagined for the modern long-stay guest."
+        alt="Aerial view of the restored 1969 A-frame cabin and wraparound deck on Mount Veeder"
       />
 
       {/* Nav Chips */}

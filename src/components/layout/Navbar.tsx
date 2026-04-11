@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { NAV_LINKS, SITE } from "@/lib/constants";
 import Logo from "@/components/ui/Logo";
+import { trackEvent } from "@/lib/analytics";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -62,6 +63,7 @@ export default function Navbar() {
           <div className="hidden lg:flex">
             <Link
               href="/availability"
+              onClick={() => trackEvent("cta_click", { location: "navbar_desktop" })}
               className="font-serif bg-brass px-5 py-2.5 text-xs uppercase tracking-[2.5px] text-ink transition-colors duration-200 hover:bg-brass-light"
             >
               Inquire Now
@@ -130,7 +132,10 @@ export default function Navbar() {
               >
                 <Link
                   href="/availability"
-                  onClick={() => setMobileOpen(false)}
+                  onClick={() => {
+                    trackEvent("cta_click", { location: "navbar_mobile" });
+                    setMobileOpen(false);
+                  }}
                   className="font-serif mt-4 inline-block bg-brass px-8 py-3 text-xs uppercase tracking-[2.5px] text-ink transition-colors duration-200 hover:bg-brass-light"
                 >
                   Inquire Now

@@ -69,6 +69,7 @@ export default function LocationPage() {
         image="/images/aerial-property-full.jpg"
         title="Mount Veeder"
         subtitle="One of Napa Valley's most prestigious and storied appellations."
+        alt="Aerial view of Summit House property nestled among redwoods at the summit of Mount Veeder"
       />
 
       {/* Mount Veeder Story */}

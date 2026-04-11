@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/ui/Button";
+import { trackEvent } from "@/lib/analytics";
 
 interface FormData {
   name: string;
@@ -117,13 +118,11 @@ export default function InquiryForm({ selectedMonth }: InquiryFormProps) {
       });
       if (res.ok) {
         setSubmitted(true);
-        if (typeof window !== "undefined" && typeof window.gtag === "function") {
-          window.gtag("event", "inquiry_submitted", {
-            dates: formData.months,
-            guests: formData.guests,
-            referral: formData.referral,
-          });
-        }
+        trackEvent("inquiry_submitted", {
+          dates: formData.months,
+          guests: formData.guests,
+          referral: formData.referral,
+        });
       } else {
         setErrors({ form: "Something went wrong. Please try again or email us directly." });
       }

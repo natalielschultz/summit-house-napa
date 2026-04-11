@@ -58,9 +58,10 @@ export default function Home() {
       />
       {/* 1. Hero */}
       <Hero
-        image="/images/twilight-deck-aframe-glowing.jpg"
+        image="/images/twilight-aerial-aframe-glowing.jpg"
         title="Summit House Napa"
         subtitle="A private mountaintop retreat above Napa Valley — two acres of ancient redwoods at the peak of Mount Veeder."
+        alt="Aerial view of Summit House A-frame cabin glowing at twilight, nestled among ancient redwoods on Mount Veeder"
         cta={{ label: "Check Availability", href: "/availability" }}
       />
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 interface Message {
   role: "user" | "assistant";
@@ -46,6 +47,7 @@ export default function ConciergeChat() {
     setMessages(updated);
     setInput("");
     setLoading(true);
+    trackEvent("concierge_message_sent");
 
     try {
       const res = await fetch("/api/chat", {
@@ -99,7 +101,10 @@ export default function ConciergeChat() {
       {/* Collapsed: sticky bottom bar, centered */}
       {!open && (
         <button
-          onClick={() => setOpen(true)}
+          onClick={() => {
+            trackEvent("concierge_opened");
+            setOpen(true);
+          }}
           className="fixed z-50 flex items-center gap-2.5 font-serif uppercase"
           style={{
             bottom: "5px",

@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { DayAvailability } from "@/lib/availability";
 import FadeIn from "@/components/animation/FadeIn";
+import { trackEvent, trackEventDebounced } from "@/lib/analytics";
 
 interface Props {
   days: DayAvailability[];
@@ -66,6 +67,23 @@ export default function AvailabilityCalendar({ days, onDatesSelect }: Props) {
   const [direction, setDirection] = useState(0);
   const [selectedCheckIn, setSelectedCheckIn] = useState<string | null>(null);
   const [hoveredDate, setHoveredDate] = useState<string | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          trackEvent("calendar_view");
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const maxPage = Math.max(0, monthKeys.length - 1);
 
@@ -73,6 +91,7 @@ export default function AvailabilityCalendar({ days, onDatesSelect }: Props) {
     if (pageIndex < maxPage) {
       setDirection(1);
       setPageIndex((p) => Math.min(p + 1, maxPage));
+      trackEvent("calendar_month_navigation", { direction: "next" });
     }
   }
 
@@ -80,6 +99,7 @@ export default function AvailabilityCalendar({ days, onDatesSelect }: Props) {
     if (pageIndex > 0) {
       setDirection(-1);
       setPageIndex((p) => Math.max(p - 1, 0));
+      trackEvent("calendar_month_navigation", { direction: "prev" });
     }
   }
 
@@ -133,13 +153,11 @@ export default function AvailabilityCalendar({ days, onDatesSelect }: Props) {
     setSelectedCheckIn(dateStr);
     const checkOut = addDays(dateStr, MIN_NIGHTS);
     const total = calculateTotal(dateStr);
-    if (typeof window !== "undefined" && typeof window.gtag === "function") {
-      window.gtag("event", "dates_selected", {
-        check_in: dateStr,
-        check_out: checkOut,
-        estimated_total: total,
-      });
-    }
+    trackEvent("dates_selected", {
+      check_in: dateStr,
+      check_out: checkOut,
+      estimated_total: total,
+    });
     if (onDatesSelect) {
       onDatesSelect(dateStr, checkOut, total);
     }
@@ -147,6 +165,13 @@ export default function AvailabilityCalendar({ days, onDatesSelect }: Props) {
 
   function handleDayHover(dateStr: string) {
     if (!selectedCheckIn) setHoveredDate(dateStr);
+    const info = dayMap.get(dateStr);
+    if (info?.status === "available" && canCheckIn(dateStr)) {
+      trackEventDebounced("calendar_date_hover", {
+        date: dateStr,
+        daily_rate: info.dailyRate,
+      });
+    }
   }
 
   // Build calendar grid for a given month
@@ -279,7 +304,7 @@ export default function AvailabilityCalendar({ days, onDatesSelect }: Props) {
   };
 
   return (
-    <section className={`bg-white py-20 md:py-28 ${selectedCheckIn ? "pb-[140px] md:pb-28" : ""}`}>
+    <section ref={sectionRef} className={`bg-white py-20 md:py-28 ${selectedCheckIn ? "pb-[140px] md:pb-28" : ""}`}>
       <div className="mx-auto max-w-5xl px-6 md:px-12">
         <FadeIn>
           <div className="flex flex-col items-center gap-4 mb-10 md:mb-16 text-center">
@@ -442,6 +467,11 @@ export default function AvailabilityCalendar({ days, onDatesSelect }: Props) {
                       <button
                         type="button"
                         onClick={() => {
+                          trackEvent("inquire_button_click", {
+                            check_in: selectedCheckIn,
+                            check_out: checkOutDate,
+                            estimated_total: estimatedTotal,
+                          });
                           const el = document.getElementById("inquiry");
                           if (el) el.scrollIntoView({ behavior: "smooth" });
                         }}
@@ -451,7 +481,10 @@ export default function AvailabilityCalendar({ days, onDatesSelect }: Props) {
                       </button>
                       <button
                         type="button"
-                        onClick={() => setSelectedCheckIn(null)}
+                        onClick={() => {
+                          trackEvent("clear_selection_click", { cleared_check_in: selectedCheckIn });
+                          setSelectedCheckIn(null);
+                        }}
                         className="border border-charcoal/20 bg-transparent font-sans text-xs uppercase tracking-[0.15em] text-charcoal px-6 py-4 hover:border-charcoal hover:bg-charcoal hover:text-parchment transition-all duration-400 cursor-pointer text-center"
                       >
                         Clear Selection
@@ -497,6 +530,11 @@ export default function AvailabilityCalendar({ days, onDatesSelect }: Props) {
               <button
                 type="button"
                 onClick={() => {
+                  trackEvent("inquire_button_click", {
+                    check_in: selectedCheckIn,
+                    check_out: checkOutDate,
+                    estimated_total: estimatedTotal,
+                  });
                   const el = document.getElementById("inquiry");
                   if (el) el.scrollIntoView({ behavior: "smooth" });
                 }}
@@ -506,7 +544,10 @@ export default function AvailabilityCalendar({ days, onDatesSelect }: Props) {
               </button>
               <button
                 type="button"
-                onClick={() => setSelectedCheckIn(null)}
+                onClick={() => {
+                  trackEvent("clear_selection_click", { cleared_check_in: selectedCheckIn });
+                  setSelectedCheckIn(null);
+                }}
                 className="border border-charcoal/20 bg-transparent font-sans text-xs uppercase tracking-[0.15em] text-charcoal px-4 py-3.5 transition-all duration-400 cursor-pointer"
               >
                 Clear

@@ -10,12 +10,12 @@ export const SITE = {
 
 export const NAV_LINKS = [
   { label: "Property", href: "/property" },
-  { label: "Gallery", href: "/gallery" },
   { label: "Experience", href: "/experience" },
   { label: "Location", href: "/location" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Reviews", href: "/reviews" },
   { label: "Availability", href: "/availability" },
   { label: "Our Story", href: "/about" },
-  { label: "Reviews", href: "/reviews" },
 ] as const;
 
 export const PROPERTY = {
