@@ -56,6 +56,7 @@ export default async function ReviewsPage() {
         title="What Guests Say"
         subtitle={`${stats.rating} out of 5 — ${stats.count} reviews on Airbnb.`}
         alt="Summit House living room with green sofa and redwood forest views through floor-to-ceiling windows"
+        overlayOpacity={0.5}
       />
 
       {/* Featured Review */}

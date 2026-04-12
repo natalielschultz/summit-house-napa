@@ -44,6 +44,7 @@ export default function RemoteWorkRetreatPage() {
         title="Work From the Summit"
         subtitle="A private residence above Napa Valley — designed for focused, connected, extended work stays."
         alt="Dedicated workspace with redwood forest views at Summit House Napa on Mount Veeder"
+        overlayOpacity={0.5}
       />
 
       {/* The Setup */}

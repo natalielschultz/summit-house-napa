@@ -56,6 +56,7 @@ export default function WhyNapaRentalsRequire31DaysPage() {
         image="/images/deck-lounge-forest-view.jpg"
         title="Why Do Napa Rentals Require 31 Days?"
         alt="Summit House deck lounge overlooking redwood forest — the setting for a month-long stay in Napa Valley"
+        overlayOpacity={0.5}
       />
 
       {/* Intro */}
