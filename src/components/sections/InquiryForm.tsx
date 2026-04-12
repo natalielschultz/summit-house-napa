@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/ui/Button";
 import { trackEvent } from "@/lib/analytics";
@@ -13,6 +13,7 @@ interface FormData {
   guests: string;
   referral: string;
   message: string;
+  _gotcha: string;
 }
 
 interface FormErrors {
@@ -27,6 +28,28 @@ const initialFormData: FormData = {
   guests: "",
   referral: "",
   message: "",
+  _gotcha: "",
+};
+
+const DISPOSABLE_DOMAINS = new Set([
+  "mailinator.com", "guerrillamail.com", "tempmail.com", "throwaway.email",
+  "yopmail.com", "10minutemail.com", "trashmail.com", "fakeinbox.com",
+  "sharklasers.com", "guerrillamailblock.com", "grr.la", "dispostable.com",
+  "maildrop.cc", "temp-mail.org", "getnada.com",
+]);
+
+const DOMAIN_TYPOS: Record<string, string> = {
+  "gmial.com": "gmail.com",
+  "gmai.com": "gmail.com",
+  "gamil.com": "gmail.com",
+  "gnail.com": "gmail.com",
+  "gmal.com": "gmail.com",
+  "yahooo.com": "yahoo.com",
+  "yaho.com": "yahoo.com",
+  "hotmal.com": "hotmail.com",
+  "hotmial.com": "hotmail.com",
+  "outlok.com": "outlook.com",
+  "outloo.com": "outlook.com",
 };
 
 const referralOptions = [
@@ -55,6 +78,8 @@ export default function InquiryForm({ selectedMonth }: InquiryFormProps) {
     months: selectedMonth || "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
+  const [submitting, setSubmitting] = useState(false);
+  const formLoadedAt = useRef(Date.now());
 
   useEffect(() => {
     if (selectedMonth) {
@@ -72,9 +97,16 @@ export default function InquiryForm({ selectedMonth }: InquiryFormProps) {
       newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Please enter a valid email";
+    } else {
+      const domain = formData.email.split("@")[1]?.toLowerCase();
+      if (domain && DISPOSABLE_DOMAINS.has(domain)) {
+        newErrors.email = "Please use a permanent email address";
+      } else if (domain && DOMAIN_TYPOS[domain]) {
+        newErrors.email = `Did you mean ${formData.email.split("@")[0]}@${DOMAIN_TYPOS[domain]}?`;
+      }
     }
     if (!formData.months.trim()) {
-      newErrors.months = "Please specify your desired dates";
+      newErrors.months = "Please specify your desired dates (30-night minimum)";
     }
     if (!formData.guests.trim()) {
       newErrors.guests = "Number of guests is required";
@@ -110,6 +142,20 @@ export default function InquiryForm({ selectedMonth }: InquiryFormProps) {
       setErrors(validationErrors);
       return;
     }
+
+    // Honeypot: if filled, a bot submitted — fake success
+    if (formData._gotcha) {
+      setSubmitted(true);
+      return;
+    }
+
+    // Timing: if submitted in under 3 seconds, likely a bot
+    if (Date.now() - formLoadedAt.current < 3000) {
+      setSubmitted(true);
+      return;
+    }
+
+    setSubmitting(true);
     try {
       const res = await fetch("https://formspree.io/f/maqloyrw", {
         method: "POST",
@@ -128,6 +174,8 @@ export default function InquiryForm({ selectedMonth }: InquiryFormProps) {
       }
     } catch {
       setErrors({ form: "Something went wrong. Please try again or email us directly." });
+    } finally {
+      setSubmitting(false);
     }
   }
 
@@ -223,7 +271,7 @@ export default function InquiryForm({ selectedMonth }: InquiryFormProps) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="months" className={labelClasses}>
-                    Desired Dates *
+                    Desired Dates (30+ night min) *
                   </label>
                   <input
                     id="months"
@@ -231,7 +279,7 @@ export default function InquiryForm({ selectedMonth }: InquiryFormProps) {
                     type="text"
                     value={formData.months}
                     onChange={handleChange}
-                    placeholder="e.g. June 15 – July 14, 2026"
+                    placeholder="e.g. June 1 – June 30, 2026"
                     className={inputClasses}
                   />
                   {errors.months && (
@@ -301,14 +349,28 @@ export default function InquiryForm({ selectedMonth }: InquiryFormProps) {
                 )}
               </div>
 
+              {/* Honeypot — invisible to humans, bots auto-fill it */}
+              <div style={{ position: "absolute", left: "-9999px", top: "-9999px" }} aria-hidden="true">
+                <label htmlFor="_gotcha">Do not fill this</label>
+                <input
+                  id="_gotcha"
+                  name="_gotcha"
+                  type="text"
+                  value={formData._gotcha}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
               {errors.form && (
                 <p className="font-sans text-sm text-error">
                   {errors.form}
                 </p>
               )}
               <div className="mt-2">
-                <Button variant="primary" type="submit">
-                  Send Inquiry
+                <Button variant="primary" type="submit" disabled={submitting}>
+                  {submitting ? "Sending..." : "Send Inquiry"}
                 </Button>
               </div>
             </motion.form>
