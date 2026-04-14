@@ -58,7 +58,7 @@ export default function TheRareKindOfPrivacyPage() {
       />
       <Hero
         image="/images/meditation-spot-redwoods.jpg"
-        title="The Rare Kind of Privacy"
+        title="The Rare Kind of Privacy You Don't Have to Own — Mount Veeder"
         subtitle="On seclusion, access, and living at the summit for a season."
         alt="Morning light through ancient redwoods at Summit House on Mount Veeder, Napa Valley"
       />
