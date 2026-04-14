@@ -28,6 +28,15 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    title: "The Rare Kind of Privacy",
+    subtitle: "On seclusion, access, and living at the summit for a season",
+    href: "/blog/the-rare-kind-of-privacy-in-napa",
+    image: "/images/meditation-spot-redwoods.jpg",
+    excerpt:
+      "Most people think about privacy in Napa as something you buy — an estate, a vineyard, a compound. But privacy is also something you can simply live inside of for a little while.",
+    date: "April 2026",
+  },
+  {
     title: "Why Do Napa Rentals Require 31 Days?",
     subtitle: "The Complete Guide",
     href: "/blog/why-napa-rentals-require-31-days",
