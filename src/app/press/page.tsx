@@ -40,7 +40,7 @@ const QUICK_FACTS: { label: string; value: string }[] = [
   { label: "Year Built", value: "1969" },
   { label: "Year Renovated", value: "2026" },
   { label: "Minimum Stay", value: "31 nights (Napa County ordinance)" },
-  { label: "Rate Range", value: "$8,000 – $16,000 per month, by season" },
+  { label: "Rate Range", value: "$12,000 – $18,000 per month, by season" },
   { label: "Distance to Downtown Napa", value: "15 minutes" },
   { label: "Distance to San Francisco", value: "1 hour" },
 ];

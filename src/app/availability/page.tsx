@@ -13,19 +13,19 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Availability & Monthly Rates | Summit House Napa",
   description:
-    "Check availability and seasonal rates for Summit House Napa. Monthly stays from $10,000–$16,000. Peak season April–November, off-peak December–March. Book direct.",
+    "Check availability and seasonal rates for Summit House Napa. Monthly stays from $12,000–$18,000. Peak season April–November, off-peak December–March. Book direct.",
   alternates: { canonical: "/availability" },
   openGraph: {
     title: "Availability & Monthly Rates | Summit House Napa",
     description:
-      "Check availability and seasonal rates for Summit House Napa. Monthly stays from $10,000–$16,000. Book direct for the best experience.",
+      "Check availability and seasonal rates for Summit House Napa. Monthly stays from $12,000–$18,000. Book direct for the best experience.",
     images: [{ url: "/images/twilight-great-room-full.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Availability & Monthly Rates | Summit House Napa",
     description:
-      "Monthly stays from $10,000–$16,000. Peak season April–November, off-peak December–March.",
+      "Monthly stays from $12,000–$18,000. Peak season April–November, off-peak December–March.",
     images: ["/images/twilight-great-room-full.jpg"],
   },
 };
