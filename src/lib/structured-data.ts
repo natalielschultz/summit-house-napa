@@ -1,12 +1,72 @@
+// Stable @ids used to cross-reference entities across schemas so AI engines
+// resolve "Summit House Napa" to a single canonical entity in their knowledge graph.
+export const ORG_ID = "https://www.summithousenapa.com/#organization";
+export const LODGING_ID = "https://www.summithousenapa.com/#lodging";
+export const VACATION_RENTAL_ID = "https://www.summithousenapa.com/#vacation-rental";
+export const WEBSITE_ID = "https://www.summithousenapa.com/#website";
+
+// Update this list as press, listings, or social profiles come online.
+// Each entry strengthens entity recognition across AI search platforms.
+const SAME_AS = [
+  "https://www.instagram.com/summithousenapa",
+  // TODO: add Google Business Profile URL once confirmed
+  // TODO: add press URLs as features land (Dwell, AFAR, Cup of Jo, etc.)
+];
+
+export function getOrganizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": ORG_ID,
+    name: "Summit House Napa",
+    alternateName: "Summit House",
+    url: "https://www.summithousenapa.com",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://www.summithousenapa.com/images/twilight-aerial-aframe-glowing.jpg",
+    },
+    image: "https://www.summithousenapa.com/images/twilight-aerial-aframe-glowing.jpg",
+    description:
+      "Summit House is a private 1969 A-frame rental at the summit of Mount Veeder in Napa Valley, offered exclusively for 31-night-minimum residencies. Several private acres of ancient redwoods at 1,800 feet elevation.",
+    email: "stay@summithousenapa.com",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Napa",
+      addressRegion: "CA",
+      postalCode: "94558",
+      addressCountry: "US",
+    },
+    areaServed: {
+      "@type": "Place",
+      name: "Mount Veeder, Napa Valley",
+    },
+    sameAs: SAME_AS,
+  };
+}
+
+export function getWebSiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": WEBSITE_ID,
+    url: "https://www.summithousenapa.com",
+    name: "Summit House Napa",
+    publisher: { "@id": ORG_ID },
+  };
+}
+
 export function getLodgingBusinessSchema(reviewStats?: { rating: string; count: number }) {
   return {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
+    "@id": LODGING_ID,
     name: "Summit House Napa",
     description:
       "Summit House is a private residence at the summit of Mount Veeder, Napa Valley. A fully renovated 1969 home on several private acres of ancient redwoods. Monthly residencies with rates starting at 31 nights. Includes hot tub, sauna, outdoor shower, meditation trail, Starlink internet, and a fully equipped kitchen.",
     url: "https://www.summithousenapa.com",
     email: "stay@summithousenapa.com",
+    image: "https://www.summithousenapa.com/images/twilight-aerial-aframe-glowing.jpg",
+    parentOrganization: { "@id": ORG_ID },
     address: {
       "@type": "PostalAddress",
       addressLocality: "Napa",
@@ -33,6 +93,7 @@ export function getLodgingBusinessSchema(reviewStats?: { rating: string; count: 
       ratingValue: reviewStats?.rating ?? "4.88",
       bestRating: "5",
       reviewCount: String(reviewStats?.count ?? 16),
+      itemReviewed: { "@id": LODGING_ID },
     },
   };
 }
@@ -41,10 +102,13 @@ export function getVacationRentalSchema(reviewStats?: { rating: string; count: n
   return {
     "@context": "https://schema.org",
     "@type": "VacationRental",
+    "@id": VACATION_RENTAL_ID,
     name: "Summit House Napa A-Frame Residence",
     description:
       "A fully renovated 1969 A-frame residence at the summit of Mount Veeder with hot tub, sauna, and private meditation trail. Sleeps 11 on several private acres of ancient redwoods. Monthly residencies in Napa Valley.",
     url: "https://www.summithousenapa.com/property",
+    image: "https://www.summithousenapa.com/images/twilight-aerial-aframe-glowing.jpg",
+    parentOrganization: { "@id": ORG_ID },
     numberOfBedrooms: 3,
     numberOfBathroomsTotal: 2.5,
     occupancy: {
@@ -65,6 +129,7 @@ export function getVacationRentalSchema(reviewStats?: { rating: string; count: n
       ratingValue: reviewStats?.rating ?? "4.88",
       bestRating: "5",
       reviewCount: String(reviewStats?.count ?? 16),
+      itemReviewed: { "@id": VACATION_RENTAL_ID },
     },
   };
 }
@@ -197,16 +262,12 @@ export function getArticleSchema(article: {
     url: `https://www.summithousenapa.com${article.url}`,
     datePublished: article.datePublished,
     image: `https://www.summithousenapa.com${article.image}`,
-    author: {
-      "@type": "Organization",
-      name: "Summit House Napa",
-      url: "https://www.summithousenapa.com",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Summit House Napa",
-      url: "https://www.summithousenapa.com",
-    },
+    mainEntityOfPage: `https://www.summithousenapa.com${article.url}`,
+    // Author and publisher both resolve to the canonical Organization entity (#organization)
+    // defined on the homepage. Per project decision, the property/brand is the author —
+    // not a named individual — until/unless an external editorial feature establishes a byline.
+    author: { "@id": ORG_ID },
+    publisher: { "@id": ORG_ID },
   };
 }
 

@@ -8,7 +8,11 @@ import CTABanner from "@/components/sections/CTABanner";
 import Image from "next/image";
 import Link from "next/link";
 import { REVIEWS, PROPERTY } from "@/lib/constants";
-import { getLodgingBusinessSchema } from "@/lib/structured-data";
+import {
+  getLodgingBusinessSchema,
+  getOrganizationSchema,
+  getWebSiteSchema,
+} from "@/lib/structured-data";
 
 const pillars = [
   {
@@ -54,6 +58,14 @@ export default function Home() {
     <>
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getOrganizationSchema()) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getWebSiteSchema()) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getLodgingBusinessSchema()) }}
       />
       {/* 1. Hero */}
@@ -77,6 +89,22 @@ export default function Home() {
               </p>
               <div className="w-24 h-px bg-brass" aria-hidden="true" />
             </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* 2b. Definitional intro — verbatim-quotable for AI search engines */}
+      <section className="bg-parchment py-20 md:py-24">
+        <div className="mx-auto max-w-4xl px-6 md:px-12">
+          <FadeIn>
+            <p className="font-serif text-xl md:text-2xl text-ink text-center leading-relaxed">
+              Summit House is a three-bedroom A-frame rental on Mount Veeder in
+              Napa Valley, offered exclusively for 31-night-minimum residencies
+              under Napa County&rsquo;s short-term rental ordinance. Set on
+              several private acres of ancient redwoods at 1,800 feet, it is
+              designed for extended stays — remote work, creative retreats, and
+              seasonal residencies.
+            </p>
           </FadeIn>
         </div>
       </section>
