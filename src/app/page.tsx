@@ -6,11 +6,7 @@ import CTABanner from "@/components/sections/CTABanner";
 import Image from "next/image";
 import Link from "next/link";
 import { REVIEWS, PROPERTY } from "@/lib/constants";
-import {
-  getLodgingBusinessSchema,
-  getOrganizationSchema,
-  getWebSiteSchema,
-} from "@/lib/structured-data";
+import { getLodgingBusinessSchema } from "@/lib/structured-data";
 import { getReviewStats } from "@/lib/reviews";
 
 const pillars = [
@@ -56,14 +52,7 @@ export default async function Home() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(getOrganizationSchema()) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(getWebSiteSchema()) }}
-      />
+      {/* Organization + WebSite schemas live in app/layout.tsx (site-wide). */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getLodgingBusinessSchema(reviewStats)) }}

@@ -4,7 +4,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import FadeIn from "@/components/animation/FadeIn";
 import CTABanner from "@/components/sections/CTABanner";
 import { REVIEWS } from "@/lib/constants";
-import { getBreadcrumbSchema } from "@/lib/structured-data";
+import { getBreadcrumbSchema, getReviewArraySchema } from "@/lib/structured-data";
 import { getReviews, getReviewStats } from "@/lib/reviews";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -50,6 +50,13 @@ export default async function ReviewsPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getBreadcrumbSchema("Guest Reviews", "/reviews")) }}
+      />
+      {/* Tier 2.1: All reviews marked up as Review entities pointing back to
+          the LodgingBusiness via itemReviewed @id. Converts AggregateRating
+          from a number-only signal into citable evidence base. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getReviewArraySchema(allReviews)) }}
       />
       <Hero
         image="/images/living-room-green-sofa-wide.jpg"

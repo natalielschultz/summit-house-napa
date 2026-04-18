@@ -5,6 +5,15 @@ export const LODGING_ID = "https://www.summithousenapa.com/#lodging";
 export const VACATION_RENTAL_ID = "https://www.summithousenapa.com/#vacation-rental";
 export const WEBSITE_ID = "https://www.summithousenapa.com/#website";
 
+// Approximate Mount Veeder summit coordinates (AVA-level, not the property's
+// exact location — privacy preserved). Used by Place schema and as the
+// geo reference on LodgingBusiness and VacationRental.
+export const MOUNT_VEEDER_GEO = {
+  "@type": "GeoCoordinates",
+  latitude: 38.4231,
+  longitude: -122.4214,
+} as const;
+
 // Single canonical brand description, reused across all schemas.
 // Tuned for AI answer-engine snippet extraction: self-contained sentence,
 // front-loads entity name + type + location, includes the unique 31-night
@@ -78,9 +87,11 @@ export function getLodgingBusinessSchema(reviewStats?: { rating: string; count: 
       addressLocality: "Napa",
       addressRegion: "CA",
       postalCode: "94558",
-      streetAddress: "Mount Veeder",
       addressCountry: "US",
+      // streetAddress intentionally omitted for guest privacy — locality + region + postal
+      // is acceptable schema and avoids exposing the property's exact mountain road address.
     },
+    geo: MOUNT_VEEDER_GEO,
     priceRange: "$$$$",
     checkinTime: "16:00",
     checkoutTime: "11:00",
@@ -114,6 +125,14 @@ export function getVacationRentalSchema(reviewStats?: { rating: string; count: n
     url: "https://www.summithousenapa.com/property",
     image: "https://www.summithousenapa.com/images/twilight-aerial-aframe-glowing.jpg",
     parentOrganization: { "@id": ORG_ID },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Napa",
+      addressRegion: "CA",
+      postalCode: "94558",
+      addressCountry: "US",
+    },
+    geo: MOUNT_VEEDER_GEO,
     numberOfBedrooms: 3,
     numberOfBathroomsTotal: 2.5,
     occupancy: {
@@ -258,23 +277,213 @@ export function getArticleSchema(article: {
   url: string;
   datePublished: string;
   image: string;
+  // Tier 2.3 enhancements (all optional for backwards compat)
+  dateModified?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  wordCount?: number;
+  articleSection?: string;
 }) {
+  const fullUrl = `https://www.summithousenapa.com${article.url}`;
+  const fullImage = `https://www.summithousenapa.com${article.image}`;
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: article.title,
     description: article.description,
-    url: `https://www.summithousenapa.com${article.url}`,
+    url: fullUrl,
     datePublished: article.datePublished,
-    image: `https://www.summithousenapa.com${article.image}`,
-    mainEntityOfPage: `https://www.summithousenapa.com${article.url}`,
+    dateModified: article.dateModified ?? article.datePublished,
+    image:
+      article.imageWidth && article.imageHeight
+        ? {
+            "@type": "ImageObject",
+            url: fullImage,
+            width: article.imageWidth,
+            height: article.imageHeight,
+          }
+        : fullImage,
+    mainEntityOfPage: fullUrl,
+    ...(article.wordCount && { wordCount: article.wordCount }),
+    ...(article.articleSection && { articleSection: article.articleSection }),
+    // Speakable lets voice assistants (Google Assistant, Siri) and AI engines
+    // identify the most readable content on the page for audio summaries.
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2", "article p:first-of-type"],
+    },
     // Author and publisher both resolve to the canonical Organization entity (#organization)
-    // defined on the homepage. Per project decision, the property/brand is the author —
+    // defined site-wide via app/layout.tsx. Per project decision, the property/brand is the author —
     // not a named individual — until/unless an external editorial feature establishes a byline.
     author: { "@id": ORG_ID },
     publisher: { "@id": ORG_ID },
   };
 }
+
+// ── Tier 2 schemas ────────────────────────────────────────────────────────
+
+type ReviewLike = {
+  name: string;
+  rating: number;
+  text: string;
+  isoDate: string;
+};
+
+/**
+ * Wraps an array of guest reviews as JSON-LD Review entities, each pointing
+ * back to the LodgingBusiness via itemReviewed @id. This converts the
+ * AggregateRating from a number-only signal into citable evidence base.
+ */
+export function getReviewArraySchema(reviews: readonly ReviewLike[]) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": reviews.map((r, i) => ({
+      "@type": "Review",
+      "@id": `https://www.summithousenapa.com/reviews#review-${i + 1}`,
+      itemReviewed: { "@id": LODGING_ID },
+      author: { "@type": "Person", name: r.name },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: String(r.rating),
+        bestRating: "5",
+      },
+      reviewBody: r.text,
+      datePublished: r.isoDate,
+    })),
+  };
+}
+
+export function getMountVeederPlaceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    "@id": "https://www.summithousenapa.com/location#mount-veeder",
+    name: "Mount Veeder",
+    description:
+      "Mount Veeder is one of the most remote and rugged American Viticultural Areas in Napa Valley, defined by volcanic soils, old-growth redwood forests, and dramatic topography. Rising to over 2,600 feet, it is home to fewer than 40 wineries producing some of the most sought-after Cabernet Sauvignon in California.",
+    url: "https://www.summithousenapa.com/location",
+    geo: MOUNT_VEEDER_GEO,
+    containedInPlace: {
+      "@type": "Place",
+      name: "Napa Valley",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "California, United States",
+      },
+    },
+    touristType: ["Wine tourism", "Architecture and design travel", "Wellness retreat"],
+  };
+}
+
+export function getPropertyFaqSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.summithousenapa.com/property#faq",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How many bedrooms does Summit House have?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Summit House has three bedrooms and 2.5 bathrooms across the renovated 1969 A-frame, sleeping up to 11 guests across multiple beds and configurations.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "When was Summit House built and renovated?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The original A-frame was built in 1969 and fully renovated in 2026. The renovation preserved the building's three joined A-frame geometry, river-rock hearth, sunken conversation pit, and original cedar materiality.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What amenities are included at Summit House?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Hot tub, infrared sauna, outdoor shower, meditation trail through ancient redwoods, fully equipped kitchen, washer/dryer, EV charger, Starlink satellite internet, and dedicated workspaces. Utilities and WiFi are included in the monthly rate.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How big is the property?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Summit House sits on several private acres of ancient redwoods at approximately 1,800 feet elevation on Mount Veeder, with no neighboring properties visible.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is the rental pet-friendly?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Pets may be considered on a case-by-case basis. Inquire about your specific pet when booking.",
+        },
+      },
+    ],
+  };
+}
+
+export function getLocationFaqSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.summithousenapa.com/location#faq",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Where is Mount Veeder located?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Mount Veeder is in the southwestern Mayacamas Mountains of Napa Valley, California. It is one of 16 American Viticultural Areas in Napa Valley and rises to over 2,600 feet, making it the most remote and rugged of the region's appellations.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How far is Summit House from downtown Napa?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Summit House is approximately 15 minutes from downtown Napa by car, descending the mountain via Mount Veeder Road. Oakville Grocery is about 10 minutes away.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How long is the drive from San Francisco?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The drive from San Francisco to Summit House is approximately one hour, depending on traffic across the Bay Bridge or Golden Gate Bridge. Sonoma is about 20 minutes away in the opposite direction.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Which wineries are near Summit House?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Summit House is surrounded by world-class Mount Veeder wineries including Hess Persson Estates, Mayacamas Vineyards, Mount Veeder Winery, Progeny, and Sky Vineyards. Most are within 10 minutes of the property.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What is the elevation of Summit House?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Summit House sits at approximately 1,800 feet elevation on Mount Veeder, well above the Napa Valley fog line, with panoramic views of the valley below.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is the road to Mount Veeder difficult to drive?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Mount Veeder Road is paved but narrow and winding. AWD or 4WD is recommended November through March when storms can leave debris on the road.",
+        },
+      },
+    ],
+  };
+}
+
+// ── Article schema (refined) ──────────────────────────────────────────────
 
 export function getBreadcrumbSchema(pageName: string, pageUrl: string) {
   return {

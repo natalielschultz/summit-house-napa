@@ -4,7 +4,11 @@ import Hero from "@/components/sections/Hero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import FadeIn from "@/components/animation/FadeIn";
 import CTABanner from "@/components/sections/CTABanner";
-import { getBreadcrumbSchema } from "@/lib/structured-data";
+import {
+  getBreadcrumbSchema,
+  getMountVeederPlaceSchema,
+  getLocationFaqSchema,
+} from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "Mount Veeder, Napa Valley — Location & Access | Summit House Napa",
@@ -65,6 +69,17 @@ export default function LocationPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getBreadcrumbSchema("Mount Veeder", "/location")) }}
+      />
+      {/* Tier 2.2: TouristAttraction schema for Mount Veeder with geo coords +
+          containedInPlace chain. Anchors the property to a recognized geographic entity. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getMountVeederPlaceSchema()) }}
+      />
+      {/* Tier 2.4: FAQPage with high-intent location queries. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getLocationFaqSchema()) }}
       />
       <Hero
         image="/images/aerial-property-full.jpg"

@@ -5,7 +5,11 @@ import FadeIn from "@/components/animation/FadeIn";
 import CTABanner from "@/components/sections/CTABanner";
 import Image from "next/image";
 import { AMENITIES, PROPERTY } from "@/lib/constants";
-import { getVacationRentalSchema, getBreadcrumbSchema } from "@/lib/structured-data";
+import {
+  getVacationRentalSchema,
+  getBreadcrumbSchema,
+  getPropertyFaqSchema,
+} from "@/lib/structured-data";
 import { getReviewStats } from "@/lib/reviews";
 import PropertyNavChips from "@/components/ui/PropertyNavChips";
 import PropertyGallery from "@/components/sections/PropertyGallery";
@@ -139,6 +143,11 @@ export default async function PropertyPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getBreadcrumbSchema("The Property", "/property")) }}
+      />
+      {/* Tier 2.4: FAQPage with high-intent property queries. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getPropertyFaqSchema()) }}
       />
       {/* 1. Hero */}
       <Hero

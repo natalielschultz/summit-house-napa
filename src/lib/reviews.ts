@@ -1,6 +1,7 @@
 export interface Review {
   name: string;
-  date: string;
+  date: string; // human-readable: "October 2024"
+  isoDate: string; // ISO 8601 for schema datePublished
   rating: number;
   text: string;
 }
@@ -71,6 +72,7 @@ export async function getReviews(minRating = 4): Promise<Review[]> {
     .map((r) => ({
       name: "Airbnb Guest",
       date: formatReviewDate(r.reviewed_at),
+      isoDate: new Date(r.reviewed_at).toISOString().slice(0, 10),
       rating: r.public.rating,
       text: r.public.review,
     }));
