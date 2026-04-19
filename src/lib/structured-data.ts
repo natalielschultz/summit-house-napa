@@ -177,10 +177,18 @@ export function getFAQSchema() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "What is the minimum stay?",
+        name: "Where is Summit House Napa located?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "31 days minimum. We embrace the extended stay because a month on Mount Veeder transforms a vacation into something deeper. Read more about why at summithousenapa.com/blog/why-napa-rentals-require-31-days.",
+          text: "Summit House is at approximately 1,800 feet elevation on Mount Veeder, in the Mayacamas Mountains of western Napa County, California. The property is 15 minutes by car from downtown Napa. The exact address is private and shared only with confirmed guests.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Why is the minimum stay 31 nights?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The 31-night minimum is required by Napa's short-term rental regulations, not a stylistic choice. The City of Napa caps vacation-rental permits at 41 (all currently issued, with no new applications accepted), and Napa County applies similar restrictions to unincorporated areas including Mount Veeder. Stays of 31 nights or longer fall outside the short-term rental framework, which is why monthly residency is the only option.",
         },
       },
       {
@@ -276,7 +284,7 @@ export function getFAQSchema() {
         name: "What makes this different from other Napa Valley rentals?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Most Napa rentals are on the valley floor. Summit House sits at the summit of Mount Veeder — several private acres of ancient redwoods with panoramic views above the valley. It's a mountaintop of your own.",
+          text: "Most Napa Valley vacation rentals are vineyard-adjacent weekend estates on the valley floor, often priced at $30,000 to $50,000 per month during peak season. Summit House starts at $12,000 per 31-night stay and reaches $18,000 at peak harvest (September–October). The setting is also different — several private acres of ancient redwoods at 1,800 feet with panoramic Napa Valley views, rather than a vineyard patio on the valley floor.",
         },
       },
     ],

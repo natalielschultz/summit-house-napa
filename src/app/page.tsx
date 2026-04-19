@@ -4,10 +4,11 @@ import Button from "@/components/ui/Button";
 import FadeIn from "@/components/animation/FadeIn";
 import CTABanner from "@/components/sections/CTABanner";
 import FeaturedIn from "@/components/sections/FeaturedIn";
+import FAQ from "@/components/sections/FAQ";
 import Image from "next/image";
 import Link from "next/link";
 import { REVIEWS, PROPERTY } from "@/lib/constants";
-import { getLodgingBusinessSchema } from "@/lib/structured-data";
+import { getLodgingBusinessSchema, getFAQSchema } from "@/lib/structured-data";
 import { getReviewStats } from "@/lib/reviews";
 
 const pillars = [
@@ -57,6 +58,10 @@ export default async function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getLodgingBusinessSchema(reviewStats)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getFAQSchema()) }}
       />
       {/* 1. Hero */}
       <Hero
@@ -266,6 +271,9 @@ export default async function Home() {
           </FadeIn>
         </div>
       </section>
+
+      {/* 6b. FAQ */}
+      <FAQ />
 
       {/* 7. Availability Teaser */}
       <section className="bg-white py-24 md:py-32">

@@ -12,30 +12,35 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "What is the minimum stay?",
+    question: "Where is Summit House located?",
     answer:
-      "Our minimum stay is one month. Summit House is designed for extended stays — whether you're working remotely, taking a sabbatical, or simply slowing down. We find that a full month allows guests to truly settle into the rhythm of the mountain.",
+      "Summit House is at approximately 1,800 feet elevation on Mount Veeder, in the Mayacamas Mountains of western Napa County, California. The property is 15 minutes by car from downtown Napa. Mount Veeder is a wine-growing AVA and home to some of the most significant redwood stands in Napa County. The exact address is private and shared only with confirmed guests.",
+  },
+  {
+    question: "Why is the minimum stay 31 nights?",
+    answer:
+      "The 31-night minimum is required by Napa's short-term rental regulations — it's not a stylistic choice. The City of Napa caps vacation-rental permits at 41 (all currently issued, with no new applications accepted), and Napa County applies similar restrictions to unincorporated areas including Mount Veeder. Stays of 31 nights or longer fall outside the short-term rental framework, which is why monthly residency is the only option here. A full month also happens to be the right way to experience Summit House.",
     link: { label: "Read: Why 31 Days?", href: "/blog/why-napa-rentals-require-31-days" },
   },
   {
-    question: "Are pets allowed?",
+    question: "How does Summit House compare to valley floor rentals?",
     answer:
-      "We welcome well-behaved dogs on a case-by-case basis. Please mention your pet in your inquiry so we can discuss any specifics. We do ask that dogs stay off the furniture and are supervised near the hot tub and sauna areas.",
-  },
-  {
-    question: "What is the cancellation policy?",
-    answer:
-      "We require a 50% deposit to confirm your booking, with the balance due 31 days before check-in. Cancellations made more than 60 days before check-in receive a full refund of the deposit. Cancellations within 31-60 days receive a 50% refund. We are happy to discuss rescheduling options on a case-by-case basis.",
-  },
-  {
-    question: "Is cleaning included?",
-    answer:
-      "A professional deep clean is included before your arrival and after your departure. For stays longer than one month, we offer optional mid-stay cleaning services at an additional cost. Basic cleaning supplies are provided for day-to-day upkeep.",
+      "Most Napa Valley vacation rentals are vineyard-adjacent weekend estates that charge $30,000 to $50,000 per month during peak season. Summit House starts at $12,000 per 31-night stay and reaches $18,000 at peak harvest (September–October). For a guest taking a two-week Napa trip, that's under $400 per night — with the remaining two weeks available for rotating guests, a weekender group, or a seasonal residency. The setting is also different: several private acres of redwoods and panoramic views rather than a vineyard patio.",
   },
   {
     question: "What is included in the monthly rate?",
     answer:
       "Your rate covers all utilities — water, electric, gas, and trash. It also includes Starlink high-speed internet, full access to the hot tub, sauna, and outdoor shower, basic toiletries and cleaning supplies, and a welcome bottle of Napa wine with a handwritten note from your host.",
+  },
+  {
+    question: "What is the cancellation policy?",
+    answer:
+      "We require a 50% deposit to confirm your booking, with the balance due 31 days before check-in. Cancellations made more than 60 days before check-in receive a full refund of the deposit. Cancellations within 31–60 days receive a 50% refund. We are happy to discuss rescheduling options on a case-by-case basis.",
+  },
+  {
+    question: "Is cleaning included?",
+    answer:
+      "A professional deep clean is included before your arrival and after your departure. For stays longer than one month, we offer optional mid-stay cleaning services at an additional cost. Basic cleaning supplies are provided for day-to-day upkeep.",
   },
   {
     question: "What is the check-in process?",
@@ -45,7 +50,12 @@ const faqData: FAQItem[] = [
   {
     question: "How fast is the WiFi?",
     answer:
-      "We use Starlink satellite internet, which delivers reliable speeds of 100-200 Mbps download and 20-40 Mbps upload — more than sufficient for video conferencing, streaming, and remote work. Coverage extends throughout the house and outdoor areas including the deck and zen garden.",
+      "We use Starlink satellite internet, which delivers reliable speeds of 100–200 Mbps download and 20–40 Mbps upload — more than sufficient for video conferencing, streaming, and remote work. Coverage extends throughout the house and outdoor areas including the deck and zen garden.",
+  },
+  {
+    question: "Are pets allowed?",
+    answer:
+      "We welcome well-behaved dogs on a case-by-case basis. Please mention your pet in your inquiry so we can discuss any specifics. We do ask that dogs stay off the furniture and are supervised near the hot tub and sauna areas.",
   },
 ];
 
