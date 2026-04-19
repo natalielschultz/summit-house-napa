@@ -260,6 +260,17 @@ export default function AncientRedwoodsMountVeederPage() {
                 of the largest trees, and rings of new shoots at the base of
                 those that were hit hardest.
               </p>
+              <p>
+                Summit House came through both fires intact. The owners credit
+                the surrounding redwoods &mdash; the fire-resilient bark, the
+                dense crown cover, the damp microclimate at the forest floor
+                &mdash; for forming a defensive envelope that slowed and
+                redirected flames approaching the structure. On Mount Veeder,
+                a redwood grove is not only a scenic feature; it is a living
+                windbreak and firebreak, and the oldest, largest trees are
+                among the most reliable you could have between you and a fire
+                line.
+              </p>
             </div>
           </FadeIn>
         </div>
@@ -360,6 +371,17 @@ export default function AncientRedwoodsMountVeederPage() {
                 drops several degrees under the canopy, and the usual sound
                 of Napa &mdash; road noise, distant traffic, occasional
                 equipment &mdash; falls away.
+              </p>
+              <p>
+                What makes the property unusual is the proximity. Five
+                minutes of driving in any direction returns you to vineyard
+                country, tasting rooms, restaurants &mdash; the Napa Valley
+                most guests come for. But at the peak of Mount Veeder, inside
+                the grove itself, you are in a different world entirely: the
+                heart of a coastal redwood forest, with all the benefits of
+                Napa a short drive below and the mystery of the canopy
+                overhead. Guests describe it most often as{" "}
+                <em>mystical</em>, and it earns the word.
               </p>
               <p>
                 The property offers 31-night monthly residencies, the minimum
