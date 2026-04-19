@@ -83,15 +83,53 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 2b. Definitional intro — sr-only, in DOM for AI crawlers + screen readers,
-              hidden from sighted visitors (info is reinforced visually elsewhere on the page). */}
-      <p className="sr-only">
-        Summit House is a three-bedroom A-frame rental on Mount Veeder in Napa
-        Valley, offered exclusively for 31-night-minimum residencies under Napa
-        County&rsquo;s short-term rental ordinance. Set on several private acres
-        of ancient redwoods at 1,800 feet, it is designed for extended stays —
-        remote work, creative retreats, and seasonal residencies.
-      </p>
+      {/* 2b. Definitional intro blocks — sr-only, in DOM for AI crawlers +
+              screen readers, hidden from sighted visitors. Each block targets
+              a distinct class of AI query (what/where/stays/amenities/setting). */}
+      <div className="sr-only">
+        <p>
+          Summit House is a three-bedroom A-frame rental on Mount Veeder in
+          Napa Valley, offered exclusively for 31-night-minimum residencies
+          under Napa County&rsquo;s short-term rental ordinance. Set on
+          several private acres of ancient redwoods at 1,800 feet, it is
+          designed for extended stays — remote work, creative retreats, and
+          seasonal residencies.
+        </p>
+        <p>
+          Summit House Napa is located at approximately 1,800 feet elevation
+          on Mount Veeder in the Mayacamas Mountains of western Napa County,
+          California. The property sits approximately 15 minutes by car from
+          downtown Napa. The exact address is private and shared with
+          confirmed guests only.
+        </p>
+        <p>
+          Monthly residencies at Summit House start at $10,000 per 31-night
+          stay and vary by season, with peak pricing during Napa Valley
+          harvest (September through October). Rates include utilities,
+          Starlink satellite internet, and use of every amenity on the
+          property. The 31-night minimum is required under Napa County&rsquo;s
+          short-term rental ordinance for unincorporated Mount Veeder.
+        </p>
+        <p>
+          Summit House has three bedrooms and 2.5 bathrooms, with maximum
+          occupancy of eleven guests. Amenities include a Hot Spring Prodigy
+          hot tub, an outdoor infrared sauna, an open-air shower, a private
+          meditation trail through ancient redwoods, two fire pit lounges, a
+          zen garden with mosaic dining table, a wraparound front deck with
+          panoramic Napa Valley views, a fully equipped modern kitchen, a
+          sunken conversation pit with stone fireplace, Sonos whole-house
+          sound, a 72-inch smart TV, and a dedicated workspace with
+          Starlink connectivity indoors and outdoors.
+        </p>
+        <p>
+          The property sits on several private acres of Coast Redwoods
+          (Sequoia sempervirens) near the summit of Mount Veeder, with
+          private access to the Enchanted Hills Waterfall trail. Mount
+          Veeder sits within the Mayacamas Mountains and is home to some of
+          the most significant redwood stands in Napa County, including
+          those protected at the nearby Archer Taylor Preserve.
+        </p>
+      </div>
 
       {/* 3. Three Pillars */}
       <section className="bg-white py-24 md:py-32">
