@@ -115,7 +115,7 @@ export default function LocationPage() {
                   here are brighter, evenings cooler, and summer temperatures
                   several degrees lower than in the town below. The
                   three-bedroom, 2.5-bathroom 1969 A-frame rental occupies
-                  several private acres of redwoods on the mountain, with
+                  two private acres of redwoods on the mountain, with
                   private access to the Enchanted Hills Waterfall trail and
                   panoramic views of Napa Valley.
                 </p>

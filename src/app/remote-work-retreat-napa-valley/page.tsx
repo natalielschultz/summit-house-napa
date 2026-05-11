@@ -110,7 +110,7 @@ export default function RemoteWorkRetreatPage() {
               <p>
                 Outside the work hours: a year-round hot tub, an infrared sauna, a fire
                 pit, and miles of mountain roads for running or walking. The French Laundry
-                is 22 minutes away if you want a reason to mark the end of a good week.
+                is 20 minutes away if you want a reason to mark the end of a good week.
               </p>
               <p>
                 This is not a coworking space. It is a private home that happens to be
@@ -171,7 +171,7 @@ export default function RemoteWorkRetreatPage() {
                     "Starlink high-speed internet",
                     "Dedicated workspace with ergonomic setup",
                     "Full kitchen — stocked with basics, designed for real cooking",
-                    "Year-round hot tub (Hot Spring Limelight — always on)",
+                    "Year-round hot tub (Hot Spring Prodigy — always on)",
                     "Infrared sauna (Enlighten Rustic 4C)",
                     "Outdoor fire pit",
                   ].map((item) => (

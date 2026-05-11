@@ -6,7 +6,7 @@ import AvailabilityContent from "@/components/sections/AvailabilityContent";
 import FAQ from "@/components/sections/FAQ";
 import { PRICING } from "@/lib/constants";
 import { getDayAvailability, computeSeasonalRates, formatRateRange } from "@/lib/availability";
-import { getFAQSchema, getBreadcrumbSchema } from "@/lib/structured-data";
+import { getFAQSchema, getBreadcrumbSchema, getMonthlyRentalServiceSchema } from "@/lib/structured-data";
 
 export const dynamic = "force-dynamic";
 
@@ -71,6 +71,13 @@ export default async function AvailabilityPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getBreadcrumbSchema("Availability & Rates", "/availability")) }}
+      />
+      {/* Service schema for the monthly residency offering — signals to AI
+          engines that this page describes a defined long-term rental service
+          with pricing and service area, distinct from a generic listing. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getMonthlyRentalServiceSchema()) }}
       />
       <Hero
         image="/images/twilight-great-room-full.jpg"

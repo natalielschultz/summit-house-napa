@@ -4,7 +4,7 @@ import Hero from "@/components/sections/Hero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import FadeIn from "@/components/animation/FadeIn";
 import CTABanner from "@/components/sections/CTABanner";
-import { getBreadcrumbSchema, getArticleSchema } from "@/lib/structured-data";
+import { getBreadcrumbSchema, getArticleSchema, getMountVeederPlaceSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "Mount Veeder Napa: Area Guide — Things to Do, Wineries & More",
@@ -137,6 +137,12 @@ export default function MountVeederAreaGuidePage() {
           ),
         }}
       />
+      {/* Place/TouristAttraction schema for Mount Veeder — anchors this guide
+          to the recognized geographic entity (AVA + AdministrativeArea chain). */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getMountVeederPlaceSchema()) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -173,12 +179,14 @@ export default function MountVeederAreaGuidePage() {
                 >
                   Mount Veeder
                 </a>{" "}
-                sits at the western edge of Napa Valley, rising to over 2,600
-                feet above the valley floor. It is one of Napa&rsquo;s oldest and most
-                respected American Viticultural Areas — known for small-production Cabernet
-                Sauvignon with an intensity that valley-floor wines rarely match. It is
-                also, for the guests who stay at Summit House, a place that becomes hard
-                to leave.
+                sits at the western edge of Napa Valley in the Mayacamas
+                Range, rising from the valley floor to a peak of approximately
+                2,677 feet. The Mount Veeder American Viticultural Area was
+                established in 1990 and is one of Napa Valley&rsquo;s 16
+                sub-appellations — known for small-production, structured
+                Cabernet Sauvignon grown above the fog line in volcanic soils.
+                Summit House sits at approximately 1,800 feet on the eastern
+                slope of the mountain.
               </p>
               <p>
                 This guide covers the wineries, trails, towns, and experiences worth
@@ -359,7 +367,7 @@ export default function MountVeederAreaGuidePage() {
             <div className="mt-12 space-y-6 font-sans text-base md:text-lg text-text leading-relaxed">
               <p>
                 Mount Veeder is not walkable to town. A car is essential. The drive from
-                Summit House to Yountville is approximately 20&ndash;25 minutes; to
+                Summit House to Yountville is approximately 20 minutes; to
                 St. Helena, 30 minutes; to Calistoga, 40 minutes. The roads on the
                 mountain are winding and beautiful — allow more time than the map suggests,
                 especially at night.

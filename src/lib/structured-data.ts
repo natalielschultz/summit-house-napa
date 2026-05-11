@@ -20,7 +20,7 @@ export const MOUNT_VEEDER_GEO = {
 // differentiator early, and hits every customer segment (remote work,
 // wellness, design, wine country, privacy) without becoming a list.
 export const SUMMIT_HOUSE_DESCRIPTION =
-  "Summit House is a private 1969 A-frame rental at the summit of Mount Veeder in Napa Valley, offered exclusively for 31-night-minimum residencies. Three bedrooms on several private acres of ancient redwoods at 1,800 feet, with hot tub, infrared sauna, meditation trail, and Starlink internet — 15 minutes from downtown Napa.";
+  "Summit House is a private 1969 A-frame rental on Mount Veeder in Napa Valley, offered exclusively as a 31-night-minimum long-term residential rental. Three bedrooms on two private acres of ancient redwoods at approximately 1,800 feet, with hot tub, infrared sauna, meditation trail, and Starlink internet — 15 minutes from downtown Napa.";
 
 // Update this list as press, listings, or social profiles come online.
 // Each entry strengthens entity recognition across AI search platforms by
@@ -31,6 +31,7 @@ const SAME_AS = [
 
   // OTA listings — add as each goes live
   "https://www.airbnb.com/rooms/1661521852780396100",
+  "https://www.airbnb.com/rooms/39117550",
   // TODO: add VRBO listing URL once live — format: https://www.vrbo.com/<listing-id>
   // TODO: add Furnished Finder listing URL once live — format: https://www.furnishedfinder.com/property/<listing-id>
 
@@ -83,7 +84,10 @@ export function getWebSiteSchema() {
   };
 }
 
-export function getLodgingBusinessSchema(reviewStats?: { rating: string; count: number }) {
+export function getLodgingBusinessSchema(
+  reviewStats?: { rating: string; count: number },
+  reviews?: readonly ReviewLike[],
+) {
   return {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
@@ -124,6 +128,21 @@ export function getLodgingBusinessSchema(reviewStats?: { rating: string; count: 
       reviewCount: String(reviewStats?.count ?? 16),
       itemReviewed: { "@id": LODGING_ID },
     },
+    ...(reviews && reviews.length > 0 && {
+      review: reviews.map((r, i) => ({
+        "@type": "Review",
+        "@id": `https://www.summithousenapa.com/reviews#review-${i + 1}`,
+        itemReviewed: { "@id": LODGING_ID },
+        author: { "@type": "Person", name: r.name },
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: String(r.rating),
+          bestRating: "5",
+        },
+        reviewBody: r.text,
+        datePublished: r.isoDate,
+      })),
+    }),
   };
 }
 
@@ -284,7 +303,7 @@ export function getFAQSchema() {
         name: "What makes this different from other Napa Valley rentals?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Most Napa Valley vacation rentals are vineyard-adjacent weekend estates on the valley floor, often priced at $30,000 to $50,000 per month during peak season. Summit House starts at $12,000 per 31-night stay and reaches $18,000 at peak harvest (September–October). The setting is also different — several private acres of ancient redwoods at 1,800 feet with panoramic Napa Valley views, rather than a vineyard patio on the valley floor.",
+          text: "Most Napa Valley vacation rentals are vineyard-adjacent weekend estates on the valley floor, often priced at $30,000 to $50,000 per month during peak season. Summit House starts at $12,000 per 31-night stay and reaches $18,000 at peak harvest (September–October). The setting is also different — two private acres of ancient redwoods at approximately 1,800 feet with panoramic Napa Valley views, rather than a vineyard patio on the valley floor.",
         },
       },
     ],
@@ -430,7 +449,7 @@ export function getPropertyFaqSchema() {
         name: "How big is the property?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Summit House sits on several private acres of ancient redwoods at approximately 1,800 feet elevation on Mount Veeder, with no neighboring properties visible.",
+          text: "Summit House sits on two private acres of ancient redwoods at approximately 1,800 feet elevation on Mount Veeder, with no neighboring properties visible.",
         },
       },
       {
@@ -500,6 +519,70 @@ export function getLocationFaqSchema() {
         },
       },
     ],
+  };
+}
+
+// ── Service schema ────────────────────────────────────────────────────────
+
+/**
+ * Service schema for the monthly residency offering. Signals to AI engines
+ * that Summit House provides a specific long-term vacation rental service
+ * with defined price range and service area, distinct from a generic listing.
+ */
+export function getMonthlyRentalServiceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.summithousenapa.com/availability#service",
+    name: "Summit House Napa — Monthly Residency",
+    serviceType: "Long-term vacation rental",
+    description:
+      "31-night-minimum monthly residencies at Summit House, a private 1969 A-frame retreat at the summit of Mount Veeder, Napa Valley. Includes utilities, Starlink internet, and full access to wellness amenities (hot tub, infrared sauna, outdoor shower, meditation trail).",
+    provider: { "@id": ORG_ID },
+    url: "https://www.summithousenapa.com/availability",
+    category: "Vacation Rental",
+    areaServed: [
+      {
+        "@type": "Place",
+        name: "Mount Veeder",
+      },
+      {
+        "@type": "Place",
+        name: "Napa Valley",
+      },
+    ],
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "USD",
+      lowPrice: "12000",
+      highPrice: "18000",
+      priceSpecification: [
+        {
+          "@type": "UnitPriceSpecification",
+          name: "Off-Peak (December–March)",
+          price: "12000",
+          priceCurrency: "USD",
+          unitText: "31-night stay",
+          minPrice: "12000",
+          maxPrice: "14000",
+        },
+        {
+          "@type": "UnitPriceSpecification",
+          name: "Peak Season (April–November)",
+          price: "14000",
+          priceCurrency: "USD",
+          unitText: "31-night stay",
+          minPrice: "14000",
+          maxPrice: "18000",
+        },
+      ],
+      eligibleDuration: {
+        "@type": "QuantitativeValue",
+        minValue: 31,
+        unitCode: "DAY",
+      },
+    },
+    itemOffered: { "@id": LODGING_ID },
   };
 }
 

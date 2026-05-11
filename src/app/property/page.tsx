@@ -171,7 +171,7 @@ export default async function PropertyPage() {
               fully renovated in 2026 and sleeping up to 11 guests. The
               architecture centers on a soaring double-height great room
               beneath the original triangular roofline, with floor-to-ceiling
-              windows that open to several private acres of ancient Coast
+              windows that open to two private acres of ancient Coast
               Redwoods. A sunken conversation pit with a stone fireplace
               anchors the main level; a fully equipped modern kitchen, a
               dedicated workspace with Starlink satellite internet, a 72-inch

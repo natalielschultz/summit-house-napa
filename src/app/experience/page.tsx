@@ -34,7 +34,7 @@ const timeline = [
     hours: "7:00 – 10:00 AM",
     title: "Stillness & Light",
     description:
-      "Begin on the private meditation trail, a winding path through ancient redwoods that leads to Enchanted Hills Waterfall. Return to the deck for coffee as the valley below fills with morning light. The silence here is not empty — it is layered with birdsong, wind through the canopy, and the particular stillness that only exists at 2,000 feet.",
+      "Begin on the private meditation trail, a winding path through ancient redwoods that leads to Enchanted Hills Waterfall. Return to the deck for coffee as the valley below fills with morning light. The silence here is not empty — it is layered with birdsong, wind through the canopy, and the particular stillness that only exists at 1,800 feet.",
     imageLabel:
       "Morning mist along the meditation trail through ancient redwoods",
     image: "/images/balcony-rattan-chairs.jpg",
@@ -123,7 +123,7 @@ export default function ExperiencePage() {
               require a 31-night minimum at this Mount Veeder property, and
               the daily cadence reflects that horizon. Guests wake to
               birdsong at approximately 1,800 feet of elevation and step onto
-              a private meditation trail that winds through several acres of
+              a private meditation trail that winds through two acres of
               ancient Coast Redwoods to the Enchanted Hills Waterfall. The
               wellness suite includes a Hot Spring Prodigy hot tub that seats
               six, an outdoor infrared sauna, and an open-air outdoor shower

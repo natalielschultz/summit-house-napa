@@ -25,7 +25,7 @@ const faqData: FAQItem[] = [
   {
     question: "How does Summit House compare to valley floor rentals?",
     answer:
-      "Most Napa Valley vacation rentals are vineyard-adjacent weekend estates that charge $30,000 to $50,000 per month during peak season. Summit House starts at $12,000 per 31-night stay and reaches $18,000 at peak harvest (September–October). For a guest taking a two-week Napa trip, that's under $400 per night — with the remaining two weeks available for rotating guests, a weekender group, or a seasonal residency. The setting is also different: several private acres of redwoods and panoramic views rather than a vineyard patio.",
+      "Most Napa Valley vacation rentals are vineyard-adjacent weekend estates that charge $30,000 to $50,000 per month during peak season. Summit House starts at $12,000 per 31-night stay and reaches $18,000 at peak harvest (September–October). For a guest taking a two-week Napa trip, that's under $400 per night — with the remaining two weeks available for rotating guests, a weekender group, or a seasonal residency. The setting is also different: two private acres of redwoods and panoramic views rather than a vineyard patio.",
   },
   {
     question: "What is included in the monthly rate?",

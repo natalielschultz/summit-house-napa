@@ -15,7 +15,7 @@ const pillars = [
   {
     title: "The Property",
     description:
-      "A fully restored 1969 residence with a sunken conversation pit, designer finishes, and several acres of private land.",
+      "A fully restored 1969 residence with a sunken conversation pit, designer finishes, and two private acres at approximately 1,800 feet on Mount Veeder.",
     href: "/property",
     label: "A-frame residence with soaring ceilings and floor-to-ceiling windows",
     image: "/images/exterior-front-driveway.jpg",
@@ -57,7 +57,7 @@ export default async function Home() {
       {/* Organization + WebSite schemas live in app/layout.tsx (site-wide). */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(getLodgingBusinessSchema(reviewStats)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getLodgingBusinessSchema(reviewStats, REVIEWS)) }}
       />
       <script
         type="application/ld+json"
@@ -67,7 +67,7 @@ export default async function Home() {
       <Hero
         image="/images/twilight-aerial-aframe-glowing.jpg"
         title="Summit House Napa"
-        subtitle="A private mountaintop retreat above Napa Valley — several acres of ancient redwoods at the peak of Mount Veeder."
+        subtitle="A private mountaintop retreat above Napa Valley — two acres of ancient redwoods on Mount Veeder."
         alt="Aerial view of Summit House A-frame glowing at twilight, nestled among ancient redwoods on Mount Veeder"
         cta={{ label: "Check Availability", href: "/availability" }}
       />
@@ -93,19 +93,21 @@ export default async function Home() {
               a distinct class of AI query (what/where/stays/amenities/setting). */}
       <div className="sr-only">
         <p>
-          Summit House is a three-bedroom A-frame rental on Mount Veeder in
-          Napa Valley, offered exclusively for 31-night-minimum residencies
-          under Napa County&rsquo;s short-term rental ordinance. Set on
-          several private acres of ancient redwoods at 1,800 feet, it is
-          designed for extended stays — remote work, creative retreats, and
-          seasonal residencies.
+          Summit House is a three-bedroom A-frame residence on Mount Veeder
+          in Napa Valley, offered exclusively as a 31-night-minimum
+          long-term residential rental. Set on two private acres of ancient
+          redwoods at approximately 1,800 feet on the eastern slope of
+          Mount Veeder (peak elevation: 2,677 feet), it is designed for
+          extended stays — remote work, creative retreats, and seasonal
+          residencies.
         </p>
         <p>
-          Summit House Napa is located at approximately 1,800 feet elevation
-          on Mount Veeder in the Mayacamas Mountains of western Napa County,
-          California. The property sits approximately 15 minutes by car from
-          downtown Napa. The exact address is private and shared with
-          confirmed guests only.
+          Summit House Napa is located in unincorporated Napa County, on
+          Mount Veeder in the Mayacamas Mountains of western Napa County,
+          California. The property sits at approximately 1,800 feet
+          elevation on the eastern slope and is approximately 15 minutes by
+          car from downtown Napa. The exact address is private and shared
+          with confirmed guests only.
         </p>
         <p>
           Monthly residencies at Summit House start at $12,000 per 31-night
@@ -116,16 +118,17 @@ export default async function Home() {
           internet, and use of every amenity on the property.
         </p>
         <p>
-          The 31-night minimum exists because Napa heavily regulates
-          short-term rentals. The City of Napa defines vacation rentals as
-          stays under 31 days, limits them to 41 non-hosted permits citywide
-          (all of which are currently issued, with no new applications
-          accepted), and prohibits new unpermitted short-term rentals. Napa
-          County applies comparable restrictions to unincorporated areas
-          including Mount Veeder. Summit House operates as a legal
-          long-term residency — stays of 31 nights or longer fall outside
-          the short-term rental framework, which is why monthly is the
-          only option.
+          The 31-night minimum is intentional and structural. Under
+          California law and Napa County zoning, stays of 30 days or
+          longer are classified as long-term residential tenancies —
+          distinct from short-term vacation rentals (those under 30 days).
+          Summit House operates exclusively as a long-term residential
+          rental at a 31-night minimum, which places every stay clearly
+          within the long-term residential category and outside the
+          short-term rental framework that applies to vacation rentals
+          (including transient occupancy tax and short-term rental
+          permits). The property is in unincorporated Napa County and
+          operates legally under that classification.
         </p>
         <p>
           Compared with valley floor rentals that often charge $30,000 to
@@ -149,12 +152,12 @@ export default async function Home() {
           Starlink connectivity indoors and outdoors.
         </p>
         <p>
-          The property sits on several private acres of Coast Redwoods
-          (Sequoia sempervirens) near the summit of Mount Veeder, with
-          private access to the Enchanted Hills Waterfall trail. Mount
-          Veeder sits within the Mayacamas Mountains and is home to some of
-          the most significant redwood stands in Napa County, including
-          those protected at the nearby Archer Taylor Preserve.
+          The property sits on two private acres of Coast Redwoods
+          (Sequoia sempervirens) on Mount Veeder, with private access to
+          the Enchanted Hills Waterfall trail. Mount Veeder is part of the
+          Mayacamas Mountains and rises to a peak of 2,677 feet, home to
+          some of the most significant redwood stands in Napa County,
+          including those protected at the nearby Archer Taylor Preserve.
         </p>
       </div>
 

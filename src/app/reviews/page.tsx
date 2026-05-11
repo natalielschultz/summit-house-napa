@@ -137,11 +137,19 @@ export default async function ReviewsPage() {
                 Verified Reviews
               </p>
               <p className="font-serif text-xl md:text-2xl text-ink">
-                Read all {stats.count} reviews on Airbnb
+                {stats.rating} out of 5 — {stats.count} verified Airbnb stays
               </p>
-              <p className="font-sans text-sm text-text-muted">
-                Link coming soon — all reviews shown above are from verified Airbnb guests.
+              <p className="font-sans text-sm text-text-muted max-w-xl">
+                All reviews shown above are reproduced verbatim from verified Airbnb guests.
               </p>
+              <a
+                href="https://www.airbnb.com/rooms/39117550"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-2 border border-ink text-ink font-sans text-xs uppercase tracking-[0.2em] px-8 py-4 hover:bg-ink hover:text-parchment transition-colors"
+              >
+                View on Airbnb
+              </a>
             </div>
           </FadeIn>
         </div>

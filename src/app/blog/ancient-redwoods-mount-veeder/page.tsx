@@ -356,7 +356,7 @@ export default function AncientRedwoodsMountVeederPage() {
             <div className="mt-12 space-y-6 font-sans text-base md:text-lg text-text leading-relaxed">
               <p>
                 <strong>Summit House Napa</strong> sits at approximately 1,800
-                feet of elevation on Mount Veeder, on several private acres
+                feet of elevation on Mount Veeder, on two private acres
                 of ancient Coast Redwoods. A private trail on the property
                 leads to the <strong>Enchanted Hills Waterfall</strong>{" "}
                 &mdash; a small seasonal cascade fed by winter rain, reached
@@ -424,7 +424,7 @@ export default function AncientRedwoodsMountVeederPage() {
               </li>
               <li>
                 <strong>Elevation on Mount Veeder:</strong> roughly 500 to
-                2,000 feet on redwood-bearing slopes
+                2,400 feet on redwood-bearing slopes (peak: 2,677 ft)
               </li>
               <li>
                 <strong>Protected area:</strong> Archer Taylor Preserve (Land

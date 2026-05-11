@@ -278,7 +278,7 @@ export default function WhyNapaRentalsRequire31DaysPage() {
                 },
                 {
                   q: "Does the 31-day minimum apply year-round?",
-                  a: "Yes.",
+                  a: "Yes. The 31-night minimum applies every month of the year. The classification follows from zoning, not seasonality — there are no exceptions during harvest, holidays, or off-peak.",
                 },
                 {
                   q: "Is the 31-day minimum common across Napa Valley?",
