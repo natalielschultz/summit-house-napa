@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Outdoor Living Space — Design Proposal | Natalie Schultz Design</title>
+<title>Belvedere Estate Refresh — Design Proposal | Natalie Schultz Design</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -221,6 +221,139 @@
   .completed-section { margin-top:48px; padding-top:32px; border-top:2px solid var(--light-gray); }
   .completed-section h2 { font-family:var(--font-display); font-size:24px; font-style:italic; color:var(--mid-gray); margin-bottom:24px; }
 </style>
+
+  /* ===== MOBILE RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    /* TABS */
+    .page-tabs { flex-wrap: wrap; gap: 0; }
+    .page-tab { padding: 10px 16px; font-size: 10px; letter-spacing: 1.5px; flex: 1; text-align: center; min-width: 0; }
+
+    /* NAV */
+    nav { padding: 10px 16px; flex-direction: column; gap: 10px; top: auto; position: relative; }
+    nav .nav-links { gap: 12px; flex-wrap: wrap; justify-content: center; }
+    nav .nav-links a { font-size: 9px; letter-spacing: 1.2px; }
+    nav .brand-text { font-size: 10px; letter-spacing: 3px; }
+
+    /* HERO */
+    .hero { padding: 60px 24px 50px; min-height: 60vh; }
+    .hero h1 { font-size: 12px; letter-spacing: 6px; }
+    .hero h2 { font-size: 9px; letter-spacing: 4px; }
+    .hero h3 { font-size: 30px; }
+    .hero h4 { font-size: 20px; }
+    .hero .summit-mark svg { height: 50px; }
+
+    /* SECTIONS */
+    section { padding: 48px 20px; }
+    .section-title { font-size: 26px; }
+    .section-intro { font-size: 14px; margin-bottom: 32px; }
+
+    /* DIVIDERS */
+    .section-divider { padding: 32px 20px; gap: 16px; flex-wrap: wrap; }
+    .section-divider .num { font-size: 36px; }
+    .section-divider h2 { font-size: 22px; }
+
+    /* RENDERING */
+    .rendering-caption { padding: 24px 20px; }
+    .rendering-caption h2 { font-size: 24px; }
+    .rendering-caption p { font-size: 14px; }
+
+    /* PREP */
+    .prep-section { padding: 32px 20px; }
+    .prep-section .prep-grid { grid-template-columns: 1fr; gap: 24px; }
+    .prep-section h2 { font-size: 24px; }
+
+    /* CONCEPT */
+    .concept-section { padding: 32px 20px; }
+    .concept-section h2 { font-size: 24px; }
+
+    /* CARDS */
+    .card-grid { grid-template-columns: 1fr !important; gap: 20px; }
+    .card img { height: 200px; }
+    .card .card-body { padding: 16px; }
+    .card h4 { font-size: 18px; }
+
+    /* PALETTE */
+    .palette-grid { justify-content: center; }
+    .swatch { width: 80px; }
+    .swatch-color { width: 80px; height: 50px; }
+
+    /* COMPARISON TABLE */
+    .comp-header, .comp-row { grid-template-columns: 1.8fr 1fr 1fr; gap: 8px; padding: 10px 12px; }
+    .comp-header span { font-size: 8px; letter-spacing: 1px; }
+    .comp-row { font-size: 12px; }
+
+    /* TOTALS */
+    .totals-box { padding: 24px 16px; }
+    .totals-line { font-size: 13px; }
+    .totals-line.grand span { font-size: 16px; }
+
+    /* TIMELINE */
+    .timeline { flex-direction: column; gap: 0; }
+    .timeline-item { text-align: left; padding: 16px 0; display: flex; gap: 16px; align-items: center; border-bottom: 1px solid rgba(212,165,116,0.15); }
+    .timeline-item::after { display: none; }
+    .timeline-label { margin-top: 0; }
+
+    /* DECISIONS */
+    .decision-item { flex-direction: column; gap: 8px; }
+    .decision-bar { width: 100%; height: 2px; }
+
+    /* BOARD */
+    .board-section { padding: 32px 20px; }
+    .board-section h2 { font-size: 24px; }
+
+    /* APPROVE / SELECT BUTTONS */
+    .approve-row { flex-wrap: wrap; gap: 8px; }
+    .approve-btn, .select-btn { font-size: 10px; padding: 8px 14px; }
+
+    /* COMMENT BOXES */
+    .comment-box { padding: 14px; margin-top: 16px; }
+    .comment-box textarea { font-size: 14px; min-height: 50px; }
+
+    /* NS DESIGN BADGE */
+    .ns-design { padding: 10px 20px; font-size: 9px; }
+
+    /* SPEC TABLE */
+    .spec-page { padding: 48px 16px; margin-top: 0; }
+    .spec-page h1 { font-size: 26px; }
+    .spec-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .spec-table th, .spec-table td { padding: 8px 10px; font-size: 12px; white-space: nowrap; }
+    .spec-approve { flex-direction: column; gap: 8px; }
+
+    /* SUMMARY BAR */
+    .summary-bar { padding: 10px 16px; }
+    .summary-bar .stat-num { font-size: 16px; }
+    .summary-bar .stat-label { font-size: 8px; letter-spacing: 1.5px; }
+    .summary-bar .submit-btn { font-size: 10px; padding: 10px 16px; letter-spacing: 1.5px; }
+
+    /* TASKS */
+    .tasks-page { padding: 48px 16px 100px; margin-top: 0; }
+    .tasks-page h1 { font-size: 26px; }
+    .tasks-filters { gap: 8px; }
+    .filter-btn { font-size: 9px; padding: 6px 12px; }
+    .task-card { padding: 14px 16px; gap: 12px; }
+    .task-title { font-size: 15px; }
+    .task-meta { gap: 6px; }
+
+    /* FOOTER */
+    footer { padding: 40px 20px 80px; }
+
+    /* INVESTMENT SECTION INLINE STYLES OVERRIDE */
+    div[style*="padding:32px 40px"] { padding: 20px 16px !important; }
+    h4[style*="font-size:36px"] { font-size: 24px !important; }
+    h4[style*="font-size:20px"] { font-size: 16px !important; }
+  }
+
+  @media (max-width: 480px) {
+    .page-tab { padding: 8px 10px; font-size: 8px; letter-spacing: 1px; }
+    nav .nav-links a { font-size: 8px; }
+    .hero h3 { font-size: 24px; }
+    .hero h4 { font-size: 17px; }
+    .section-title { font-size: 22px; }
+    .comp-header, .comp-row { grid-template-columns: 1fr; gap: 4px; }
+    .comp-header span:first-child { display: none; }
+    .summary-bar { flex-direction: column; gap: 8px; }
+    .summary-bar .summary-left { gap: 16px; }
+  }
 </head>
 <body>
 
@@ -252,10 +385,10 @@
 <div class="hero">
   <div class="summit-mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 92" height="56"><polygon points="70.5,4 73.5,4 38,92 33,92" fill="#D4A574"/><polygon points="70.5,4 73.5,4 111,92 106,92" fill="#D4A574"/><circle cx="72.0" cy="86.0" r="3.8" fill="#D4A574"/></svg></div>
   <h1>Natalie Schultz Design</h1>
-  <h2>Outdoor Living &middot; Summit House</h2>
+  <h2>Belvedere Estate Refresh</h2>
   <div class="gold-line"></div>
-  <h3>Outdoor Living Space</h3>
-  <h4>Design Proposal for Gary</h4>
+  <h3>Belvedere Estate Refresh</h3>
+  <h4>Design Proposal for Garry McGuire</h4>
   <div class="meta">Prepared May 2026</div>
 </div>
 
@@ -583,8 +716,8 @@
   <span class="num">XIV</span><span class="divider-line"></span><h2>The Real Investment</h2>
 </div>
 <section>
-  <h2 class="section-title">You&rsquo;re not just decorating &mdash; you&rsquo;re adding living space.</h2>
-  <p class="section-intro">This project transforms roughly <strong>400 square feet</strong> of underused patio into a fully designed outdoor living area. That&rsquo;s a whole new room.</p>
+  <h2 class="section-title">Phase 1: The Outdoor Living Area &mdash; An Investment in Your Home.</h2>
+  <p class="section-intro">This first phase transforms roughly <strong>400 square feet</strong> of underused patio into a fully designed outdoor living area &mdash; stylish, functional, and elegant. Future phases can extend into a cohesive master plan for the full estate, on your timeline.</p>
   <div class="card-grid three" style="margin-top:40px;">
     <div class="card"><div class="card-body" style="padding:32px; text-align:center;"><div class="card-tag">Total Space</div><h4 style="font-size:36px; margin-top:12px;">~400 sq ft</h4><p style="margin-top:12px;">280 sq ft lounge + 120 sq ft spa &mdash; larger than most bedrooms</p></div></div>
     <div class="card"><div class="card-body" style="padding:32px; text-align:center;"><div class="card-tag">Option 1 Cost / Sq Ft</div><h4 style="font-size:36px; margin-top:12px;">~$64 / sq ft</h4><p style="margin-top:12px;">Full spa retreat &mdash; everything included</p></div></div>
@@ -707,18 +840,18 @@
 <div id="page-tasks" class="page-content">
 <div class="tasks-page">
   <h1>Tasks &amp; Approvals</h1>
-  <div class="tasks-sub">Project tracker &middot; Outdoor Living Space</div>
+  <div class="tasks-sub">Project tracker &middot; Belvedere Estate Refresh</div>
 
   <div class="tasks-filters">
     <button class="filter-btn active" onclick="filterTasks('all', this)">All</button>
-    <button class="filter-btn" onclick="filterTasks('gary', this)">Gary</button>
+    <button class="filter-btn" onclick="filterTasks('garry', this)">Garry</button>
     <button class="filter-btn" onclick="filterTasks('natalie', this)">Natalie</button>
     <button class="filter-btn" onclick="filterTasks('adam', this)">Adam</button>
     <button class="filter-btn" onclick="filterTasks('yari', this)">Yari</button>
   </div>
 
   <div id="activeTasks">
-    <div class="task-section-header">Decisions &mdash; Gary</div>
+    <div class="task-section-header">Decisions &mdash; Garry McGuire</div>
 
     <div class="task-card" data-assignee="gary" data-category="decision">
       <div class="task-check" onclick="completeTask(this, 'gary')"></div>
@@ -726,7 +859,7 @@
         <div class="task-title">Choose Option 1 or Option 2</div>
         <div class="task-desc">Spa Retreat (~$26K) or Cocktail Lounge (~$15K) &mdash; or phased approach</div>
         <div class="task-meta">
-          <span class="task-assignee assignee-gary">Gary</span>
+          <span class="task-assignee assignee-gary">Garry</span>
           <span class="task-priority priority-high">High</span>
           <span class="task-category">Decision</span>
         </div>
@@ -739,7 +872,7 @@
         <div class="task-title">Select chair style</div>
         <div class="task-desc">Segovia Eucalyptus ($400 ea) or Dominico Acacia ($500 ea) &mdash; or mix both</div>
         <div class="task-meta">
-          <span class="task-assignee assignee-gary">Gary</span>
+          <span class="task-assignee assignee-gary">Garry</span>
           <span class="task-priority priority-high">High</span>
           <span class="task-category">Decision</span>
         </div>
@@ -752,7 +885,7 @@
         <div class="task-title">Hot tub preference</div>
         <div class="task-desc">Wood-burning cedar (Leisurecraft, $7K) or traditional electric ($3K&ndash;$8K range)?</div>
         <div class="task-meta">
-          <span class="task-assignee assignee-gary">Gary</span>
+          <span class="task-assignee assignee-gary">Garry</span>
           <span class="task-priority priority-medium">Medium</span>
           <span class="task-category">Decision</span>
         </div>
@@ -765,7 +898,7 @@
         <div class="task-title">Review &amp; approve full proposal</div>
         <div class="task-desc">Go through the Design Proposal tab, approve items, and submit selections</div>
         <div class="task-meta">
-          <span class="task-assignee assignee-gary">Gary</span>
+          <span class="task-assignee assignee-gary">Garry</span>
           <span class="task-priority priority-high">High</span>
           <span class="task-category">Approval</span>
         </div>
@@ -778,7 +911,7 @@
         <div class="task-title">Approve budget &amp; specs</div>
         <div class="task-desc">Review the Specifications &amp; Budget tab and approve each line item</div>
         <div class="task-meta">
-          <span class="task-assignee assignee-gary">Gary</span>
+          <span class="task-assignee assignee-gary">Garry</span>
           <span class="task-priority priority-high">High</span>
           <span class="task-category">Approval</span>
         </div>
@@ -884,7 +1017,7 @@
       <div class="task-check" onclick="completeTask(this, 'natalie')"></div>
       <div class="task-content">
         <div class="task-title">Order lounge chairs (&times;4)</div>
-        <div class="task-desc">Pending Gary&rsquo;s chair selection &mdash; Segovia or Dominico</div>
+        <div class="task-desc">Pending Garry&rsquo;s chair selection &mdash; Segovia or Dominico</div>
         <div class="task-meta">
           <span class="task-assignee assignee-natalie">Natalie</span>
           <span class="task-priority priority-high">High</span>
@@ -979,7 +1112,7 @@
         <div class="task-title">Decide on pass-through bar window</div>
         <div class="task-desc">Basement &rarr; patio service window for the speakeasy connection</div>
         <div class="task-meta">
-          <span class="task-assignee assignee-gary">Gary</span>
+          <span class="task-assignee assignee-gary">Garry</span>
           <span class="task-priority priority-low">Low</span>
           <span class="task-category">Future</span>
         </div>
@@ -1096,7 +1229,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 function submitSelections() {
-  let summary = 'GARY\'S SELECTIONS — Outdoor Living Space\n';
+  let summary = 'GARRY\'S SELECTIONS — Belvedere Estate Refresh\n';
   summary += '=' .repeat(50) + '\n\n';
 
   // Option choice
@@ -1122,7 +1255,7 @@ function submitSelections() {
     }
   });
 
-  const mailtoLink = 'mailto:natalielschultz@gmail.com?subject=' + encodeURIComponent('Outdoor Living Space — My Selections') + '&body=' + encodeURIComponent(summary);
+  const mailtoLink = 'mailto:natalielschultz@gmail.com?subject=' + encodeURIComponent('Belvedere Estate Refresh — My Selections') + '&body=' + encodeURIComponent(summary);
   window.location.href = mailtoLink;
 }
 
@@ -1184,7 +1317,7 @@ function moveTaskToActive(card) {
   let insertBefore = null;
   for (const h of headers) {
     const text = h.textContent.toLowerCase();
-    if (assignee === 'gary' && text.includes('gary')) { insertBefore = h.nextElementSibling; break; }
+    if (assignee === 'garry' && text.includes('gary')) { insertBefore = h.nextElementSibling; break; }
     if ((assignee === 'adam' || assignee === 'yari') && text.includes('adam')) { insertBefore = h.nextElementSibling; break; }
     if (assignee === 'natalie' && text.includes('natalie')) { insertBefore = h.nextElementSibling; break; }
   }
