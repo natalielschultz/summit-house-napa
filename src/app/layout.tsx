@@ -22,7 +22,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Summit House Napa — Luxury Monthly Retreat on Mount Veeder",
+  title: "The Summit House Collection \u2014 Luxury Furnished Residences",
   description: SUMMIT_HOUSE_DESCRIPTION,
   metadataBase: new URL("https://www.summithousenapa.com"),
   alternates: {
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Summit House Napa",
-    title: "Summit House Napa — Luxury Monthly Retreat on Mount Veeder",
+    siteName: "The Summit House Collection",
+    title: "The Summit House Collection \u2014 Luxury Furnished Residences",
     description: SUMMIT_HOUSE_DESCRIPTION,
     images: [{ url: "/images/twilight-aframe-facade-front.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Summit House Napa — Luxury Monthly Retreat on Mount Veeder",
+    title: "The Summit House Collection \u2014 Luxury Furnished Residences",
     description: SUMMIT_HOUSE_DESCRIPTION,
     images: ["/images/twilight-aframe-facade-front.jpg"],
   },
@@ -56,7 +56,7 @@ export default function RootLayout({
     >
       <head>
         <link rel="alternate" href="/llms.txt" type="text/plain" />
-        {/* Site-wide entity schemas — Organization and WebSite live in layout
+        {/* Site-wide entity schemas \u2014 Organization and WebSite live in layout
             so every page defines #organization in its own DOM (closes the
             dangling-@id gap when AI crawlers parse pages in isolation). */}
         <script
