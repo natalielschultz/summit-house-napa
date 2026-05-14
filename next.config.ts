@@ -5,6 +5,11 @@ const nextConfig: NextConfig = {
     return [
       { source: "/rates-availability", destination: "/availability", permanent: true },
       { source: "/aframehome", destination: "/", permanent: true },
+      {
+        source: "/SummitHouse_Gary_Interactive.html",
+        destination: "https://summit-house-proposals.vercel.app/SummitHouse_Gary_Interactive.html",
+        permanent: true,
+      },
     ];
   },
 };
