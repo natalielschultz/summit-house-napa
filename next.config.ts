@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
       { source: "/aframehome", destination: "/", permanent: true },
       {
         source: "/SummitHouse_Gary_Interactive.html",
-        destination: "https://summit-house-proposals.vercel.app/SummitHouse_Gary_Interactive.html",
+        destination: "https://proposals.summithousenapa.com/SummitHouse_Gary_Interactive.html",
         permanent: true,
       },
     ];
