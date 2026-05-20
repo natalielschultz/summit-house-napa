@@ -1,7 +1,7 @@
 export const SITE = {
-  name: "Summit House",
-  tagline: "The Summit House Collection",
-  description: "The Summit House Collection — a curated portfolio of furnished luxury residences. Mount Veeder, Napa Valley and Pacific Heights, San Francisco.",
+  name: "Summit House Napa",
+  tagline: "A summit retreat on Mount Veeder",
+  description: "A private mountaintop sanctuary hidden among ancient redwoods at the summit of Mount Veeder, Napa Valley.",
   email: "stay@summithousenapa.com",
   phone: "",
   instagram: "summithousenapa",
@@ -9,20 +9,19 @@ export const SITE = {
 } as const;
 
 export const NAV_LINKS = [
-  { label: "Napa", href: "/property" },
-  { label: "Pied-à-Terre", href: "/pied-a-terre" },
+  { label: "Property", href: "/property" },
   { label: "Experience", href: "/experience" },
   { label: "Location", href: "/location" },
   { label: "Gallery", href: "/gallery" },
   { label: "Reviews", href: "/reviews" },
   { label: "Availability", href: "/availability" },
+  { label: "Our Story", href: "/about" },
 ] as const;
 
 // Secondary pages surfaced via the desktop "Discover" dropdown and the
 // mobile hamburger overlay. Also used by the Footer's Journal & Press and
 // Extended Stays columns, so both header and footer stay in sync.
 export const DISCOVER_LINKS = [
-  { label: "Our Story", href: "/about" },
   { label: "Journal", href: "/blog" },
   { label: "Mount Veeder Guide", href: "/mount-veeder-napa-area-guide" },
   { label: "Press", href: "/press" },
@@ -46,14 +45,14 @@ export const PRICING = {
   seasons: [
     {
       name: "Peak Season",
-      months: "April\u2013Nov",
-      range: "$14,000\u2013$18,000",
+      months: "April–Nov",
+      range: "$14,000–$18,000",
       description: "Summer through harvest. The most sought-after months in Napa Valley.",
     },
     {
       name: "Off-Peak",
-      months: "Dec\u2013March",
-      range: "$12,000\u2013$14,000",
+      months: "Dec–March",
+      range: "$12,000–$14,000",
       description: "Quieter months on the mountain. Ideal for remote work, creative retreats, and winter wellness.",
     },
   ],
@@ -101,21 +100,21 @@ export const REVIEWS = [
     date: "October 2024",
     isoDate: "2024-10-15",
     rating: 5,
-    text: "An absolutely magical property. The meditation trail through the redwoods to the waterfall was the highlight of our month-long stay. We worked remotely every day with perfect Starlink connectivity, and every evening ended in the hot tub under the stars. The hosting is incredible \u2014 personal, attentive, and thoughtful.",
+    text: "An absolutely magical property. The meditation trail through the redwoods to the waterfall was the highlight of our month-long stay. We worked remotely every day with perfect Starlink connectivity, and every evening ended in the hot tub under the stars. The hosting is incredible — personal, attentive, and thoughtful.",
   },
   {
     name: "James & Emily",
     date: "August 2024",
     isoDate: "2024-08-15",
     rating: 5,
-    text: "We\u2019ve stayed in luxury rentals across Napa and Sonoma, and nothing compares to Summit House. The privacy, the ancient redwoods, the outdoor shower \u2014 it\u2019s a different world up on Mount Veeder. The renovation is stunning. We\u2019re already planning our return.",
+    text: "We've stayed in luxury rentals across Napa and Sonoma, and nothing compares to Summit House. The privacy, the ancient redwoods, the outdoor shower — it's a different world up on Mount Veeder. The renovation is stunning. We're already planning our return.",
   },
   {
     name: "Michael",
     date: "June 2024",
     isoDate: "2024-06-15",
     rating: 5,
-    text: "Took a sabbatical and spent two months here. Best decision I\u2019ve made in years. The property is exactly as described \u2014 private, beautifully designed, and the natural setting is extraordinary. The sunken conversation pit is where I wrote the best chapters of my book.",
+    text: "Took a sabbatical and spent two months here. Best decision I've made in years. The property is exactly as described — private, beautifully designed, and the natural setting is extraordinary. The sunken conversation pit is where I wrote the best chapters of my book.",
   },
   {
     name: "Ana & David",

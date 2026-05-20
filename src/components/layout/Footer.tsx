@@ -20,11 +20,8 @@ export default function Footer() {
             <Link href="/" className="inline-block">
               <Logo className="h-8 w-auto text-parchment" />
             </Link>
-            <p className="mt-2 font-serif text-[11px] uppercase tracking-[3px] text-brass">
-              Collection
-            </p>
             <p className="mt-3 text-sm text-text-muted">
-              Mount Veeder \u00b7 Pacific Heights \u00b7 California
+              Mount Veeder &middot; Napa Valley &middot; California
             </p>
           </div>
 
@@ -53,25 +50,18 @@ export default function Footer() {
         {/* Row 2: navigation columns */}
         <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <h3 className={FOOTER_HEADING_CLASS}>The Collection</h3>
-            <nav className="flex flex-col gap-3">
-              <Link href="/property" className={FOOTER_COL_CLASS}>Summit House Napa</Link>
-              <Link href="/pied-a-terre" className={FOOTER_COL_CLASS}>Summit House Pied-\u00e0-Terre</Link>
-            </nav>
-          </div>
-          <div>
-            <h3 className={FOOTER_HEADING_CLASS}>Napa Valley</h3>
+            <h3 className={FOOTER_HEADING_CLASS}>The Property</h3>
             <nav className="flex flex-col gap-3">
               <Link href="/property" className={FOOTER_COL_CLASS}>Property</Link>
               <Link href="/experience" className={FOOTER_COL_CLASS}>Experience</Link>
               <Link href="/location" className={FOOTER_COL_CLASS}>Location</Link>
               <Link href="/gallery" className={FOOTER_COL_CLASS}>Gallery</Link>
-              <Link href="/availability" className={FOOTER_COL_CLASS}>Availability</Link>
             </nav>
           </div>
           <div>
             <h3 className={FOOTER_HEADING_CLASS}>Planning Your Stay</h3>
             <nav className="flex flex-col gap-3">
+              <Link href="/availability" className={FOOTER_COL_CLASS}>Availability</Link>
               <Link href="/reviews" className={FOOTER_COL_CLASS}>Reviews</Link>
               <Link href="/about" className={FOOTER_COL_CLASS}>Our Story</Link>
             </nav>
@@ -82,6 +72,11 @@ export default function Footer() {
               <Link href="/blog" className={FOOTER_COL_CLASS}>Journal</Link>
               <Link href="/mount-veeder-napa-area-guide" className={FOOTER_COL_CLASS}>Mount Veeder Guide</Link>
               <Link href="/press" className={FOOTER_COL_CLASS}>Press</Link>
+            </nav>
+          </div>
+          <div>
+            <h3 className={FOOTER_HEADING_CLASS}>Extended Stays</h3>
+            <nav className="flex flex-col gap-3">
               <Link href="/remote-work-retreat-napa-valley" className={FOOTER_COL_CLASS}>Remote Work Retreats</Link>
             </nav>
           </div>
@@ -91,9 +86,6 @@ export default function Footer() {
         <div className="mt-12 flex flex-col gap-4 border-t border-parchment/10 pt-8 md:flex-row md:items-center md:justify-between">
           <p className="text-xs text-text-muted">
             &copy; {currentYear} {SITE.name}. All rights reserved.
-          </p>
-          <p className="text-xs text-text-muted font-serif uppercase tracking-[2px]">
-            The Summit House Collection
           </p>
           <nav className="flex flex-wrap gap-x-6 gap-y-2 text-xs">
             <Link
